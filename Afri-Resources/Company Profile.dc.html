@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+body { margin:0; }
+* { box-sizing:border-box; }
+doc-page:not(:defined) { visibility:hidden; }
+a { color:#3A4046; } a:hover { color:#0A0B0C; }
+</style>
+<script src="./doc-page.js"></script>
+</helmet>
+
+<doc-page size="a4">
+
+  <!-- PAGE 1 — COVER -->
+  <section class="page" data-screen-label="01 Cover" style="position:relative;overflow:hidden;background:#070809;display:flex;flex-direction:column;font-family:'Poppins',sans-serif;">
+    <div style="position:absolute;inset:0;background-image:url('uploads/pasted-1783327202789-0.png');background-size:cover;background-position:center;opacity:0.26;filter:grayscale(1);"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(160deg,rgba(7,8,9,0.9) 0%,rgba(7,8,9,0.72) 52%,rgba(7,8,9,0.97) 100%);"></div>
+    <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(214,218,224,0.6) 50%,transparent);"></div>
+
+    <div style="position:relative;z-index:2;padding:64px 60px 0;flex-shrink:0;">
+      <img src="uploads/pasted-1783962574079-0.png" style="height:46px;width:auto;filter:grayscale(1) brightness(2.5) contrast(0.95);display:block;" alt="AfriResources" />
+    </div>
+
+    <div style="position:relative;z-index:2;flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding:0 60px 56px;">
+      <div style="font-weight:500;font-size:10px;letter-spacing:0.32em;text-transform:uppercase;color:#9AA1A9;margin-bottom:28px;">Company Profile · 2026</div>
+      <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:86px;line-height:0.94;text-transform:uppercase;margin-bottom:30px;background:linear-gradient(172deg,#FBFCFD 6%,#C6CCD3 38%,#8B929A 60%,#D5DAE0 84%,#F4F6F8 98%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">Integrated commodity trading &amp; mining services</div>
+      <div style="width:56px;height:1px;background:rgba(214,218,224,0.55);margin-bottom:30px;"></div>
+      <div style="font-weight:300;font-size:14.5px;color:#9AA1A9;line-height:1.95;max-width:470px;">AfriResources delivers integrated commodity trading, mining services and logistics solutions across Southern Africa. Through strategic sourcing, commercial expertise and reliable end-to-end execution, we connect producers with domestic and international markets.</div>
+    </div>
+
+    <div style="position:relative;z-index:2;padding:30px 60px;border-top:1px solid rgba(220,224,230,0.14);display:grid;grid-template-columns:repeat(4,1fr);gap:24px;flex-shrink:0;">
+      <sc-for list="{{ coverStats }}" as="st" hint-placeholder-count="4">
+        <div>
+          <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:26px;line-height:1;color:#F4F6F8;">{{ st.value }}</div>
+          <div style="font-weight:500;font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:#6A7178;margin-top:7px;">{{ st.label }}</div>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="position:relative;z-index:2;padding:18px 60px;border-top:1px solid rgba(220,224,230,0.10);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;">
+      <span style="font-weight:500;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#6A7178;">Est. 2018</span>
+      <span style="font-weight:500;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#6A7178;">Pretoria · Mpumalanga · Johannesburg</span>
+      <span style="font-weight:500;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#6A7178;">100% Black-Owned</span>
+    </div>
+  </section>
+
+  <!-- PAGE 2 — WHO WE ARE -->
+  <section class="page" data-screen-label="02 Who We Are" style="background:#FFFFFF;display:flex;flex-direction:column;font-family:'Poppins',sans-serif;">
+    <div style="padding:22px 48px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #E4E6E9;flex-shrink:0;">
+      <img src="uploads/pasted-1783962574079-0.png" style="height:26px;width:auto;filter:grayscale(1) brightness(0.4) contrast(1.25);" alt="AfriResources" />
+      <span style="font-weight:500;font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:#B4B9BE;">02 · Who We Are</span>
+    </div>
+
+    <div style="padding:40px 48px;flex:1;">
+      <div style="display:flex;align-items:center;gap:13px;margin-bottom:26px;">
+        <div style="width:24px;height:1px;background:#9AA1A9;flex-shrink:0;"></div>
+        <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:36px;letter-spacing:0.02em;text-transform:uppercase;color:#0A0B0C;">Who We Are</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1.15fr 1fr;gap:34px;">
+        <div style="display:flex;flex-direction:column;gap:15px;">
+          <p style="font-weight:300;font-size:13px;color:#0A0B0C;line-height:1.85;margin:0;">AfriResources is a 100% black-owned commodity trading, mining services and logistics company operating across Southern Africa.</p>
+          <p style="font-weight:300;font-size:12px;color:#5A6068;line-height:1.9;margin:0;">We source bulk minerals directly from established mining operations, manage quality and beneficiation to customer specification, and coordinate road, rail and export logistics through a network of trusted partners. Our customers span domestic industrial users, utilities and international trading houses.</p>
+          <p style="font-weight:300;font-size:12px;color:#5A6068;line-height:1.9;margin:0;">The business is deliberately built as a single commercial thread — sourcing, quality, trading and logistics under one accountable team — so counterparties deal with one point of contact from mine to delivery. That structure is what allows us to move product reliably at a scale usually associated with much larger houses, while keeping the responsiveness of an owner-led operation.</p>
+          <p style="font-weight:300;font-size:12px;color:#5A6068;line-height:1.9;margin:0;">Coal remains our largest traded volume, alongside a growing chrome and manganese book, supported by documented governance, KYC onboarding and commercial structures suitable for institutional funders and export partners.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="background:#070809;padding:24px 26px;">
+            <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:44px;color:#F4F6F8;line-height:1;">16,800+</div>
+            <div style="font-weight:500;font-size:8.5px;letter-spacing:0.2em;text-transform:uppercase;color:#8B929A;margin-top:7px;">Tons Delivered</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;">
+            <div style="padding:16px 8px;background:#F2F3F5;border-top:2px solid #070809;text-align:center;"><div style="font-family:'Big Shoulders Display',sans-serif;font-weight:700;font-size:16px;text-transform:uppercase;color:#0A0B0C;">Coal</div></div>
+            <div style="padding:16px 8px;background:#F2F3F5;border-top:2px solid #9AA1A9;text-align:center;"><div style="font-family:'Big Shoulders Display',sans-serif;font-weight:700;font-size:16px;text-transform:uppercase;color:#0A0B0C;">Chrome</div></div>
+            <div style="padding:16px 8px;background:#F2F3F5;border-top:2px solid #070809;text-align:center;"><div style="font-family:'Big Shoulders Display',sans-serif;font-weight:700;font-size:16px;text-transform:uppercase;color:#0A0B0C;">Mn</div></div>
+          </div>
+          <div style="display:flex;flex-direction:column;">
+            <sc-for list="{{ facts }}" as="f" hint-placeholder-count="4">
+              <div style="display:flex;justify-content:space-between;gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid #E9EBED;">
+                <span style="font-weight:500;font-size:8.5px;letter-spacing:0.18em;text-transform:uppercase;color:#9AA1A9;">{{ f.label }}</span>
+                <span style="font-weight:400;font-size:11px;color:#0A0B0C;text-align:right;">{{ f.value }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="background:#070809;padding:12px 48px;display:flex;justify-content:space-between;flex-shrink:0;">
+      <span style="font-weight:300;font-size:8px;letter-spacing:0.1em;color:#6A7178;">afri-resources.co.za</span>
+      <span style="font-weight:300;font-size:8px;letter-spacing:0.1em;color:#6A7178;">Confidential</span>
+    </div>
+  </section>
+
+  <!-- PAGE 3 — MVV + BUSINESS MODEL -->
+  <section class="page" data-screen-label="03 Model" style="background:#FFFFFF;display:flex;flex-direction:column;font-family:'Poppins',sans-serif;">
+    <div style="padding:22px 48px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #E4E6E9;flex-shrink:0;">
+      <img src="uploads/pasted-1783962574079-0.png" style="height:26px;width:auto;filter:grayscale(1) brightness(0.4) contrast(1.25);" alt="AfriResources" />
+      <span style="font-weight:500;font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:#B4B9BE;">03 · Mission &amp; Model</span>
+    </div>
+
+    <div style="padding:38px 48px;flex:1;display:flex;flex-direction:column;gap:34px;">
+
+      <div>
+        <div style="display:flex;align-items:center;gap:13px;margin-bottom:22px;">
+          <div style="width:24px;height:1px;background:#9AA1A9;flex-shrink:0;"></div>
+          <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:34px;letter-spacing:0.02em;text-transform:uppercase;color:#0A0B0C;">Mission · Vision · Values</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">
+          <div style="padding:24px 22px;background:#070809;">
+            <div style="font-weight:500;font-size:8.5px;letter-spacing:0.24em;text-transform:uppercase;color:#8B929A;margin-bottom:13px;">Mission</div>
+            <p style="font-weight:300;font-size:11px;color:#D6DAE0;line-height:1.8;margin:0;">To move bulk commodities reliably from mine to market — combining commercial expertise with disciplined, documented execution at every stage.</p>
+          </div>
+          <div style="padding:24px 22px;background:#070809;">
+            <div style="font-weight:500;font-size:8.5px;letter-spacing:0.24em;text-transform:uppercase;color:#8B929A;margin-bottom:13px;">Vision</div>
+            <p style="font-weight:300;font-size:11px;color:#D6DAE0;line-height:1.8;margin:0;">To be Southern Africa's most trusted integrated commodity trading, mining services and logistics partner, with a credible global footprint.</p>
+          </div>
+          <div style="padding:24px 22px;background:#070809;">
+            <div style="font-weight:500;font-size:8.5px;letter-spacing:0.24em;text-transform:uppercase;color:#8B929A;margin-bottom:13px;">Values</div>
+            <div style="display:flex;flex-direction:column;gap:10px;">
+              <sc-for list="{{ values }}" as="val" hint-placeholder-count="4">
+                <div style="display:flex;align-items:center;gap:9px;">
+                  <div style="width:4px;height:4px;background:#9AA1A9;flex-shrink:0;"></div>
+                  <span style="font-weight:400;font-size:11px;color:#D6DAE0;">{{ val }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div style="display:flex;align-items:center;gap:13px;margin-bottom:8px;">
+          <div style="width:24px;height:1px;background:#9AA1A9;flex-shrink:0;"></div>
+          <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:34px;letter-spacing:0.02em;text-transform:uppercase;color:#0A0B0C;">Business Model</div>
+        </div>
+        <p style="font-weight:300;font-size:12px;color:#8B929A;line-height:1.8;margin:0 0 20px 37px;">Every ton passes through five controlled stages. We hold the commercial accountability at each one.</p>
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:#E4E6E9;border:1px solid #E4E6E9;">
+          <sc-for list="{{ model }}" as="m" hint-placeholder-count="5">
+            <div style="background:#FFFFFF;padding:20px 15px 24px;">
+              <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:23px;color:#D2D5D9;line-height:1;margin-bottom:14px;">{{ m.num }}</div>
+              <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:700;font-size:19px;letter-spacing:0.03em;text-transform:uppercase;color:#0A0B0C;margin-bottom:9px;">{{ m.title }}</div>
+              <p style="font-weight:300;font-size:9.5px;color:#5A6068;line-height:1.75;margin:0;">{{ m.body }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+    </div>
+    <div style="background:#070809;padding:12px 48px;display:flex;justify-content:space-between;flex-shrink:0;">
+      <span style="font-weight:300;font-size:8px;letter-spacing:0.1em;color:#6A7178;">afri-resources.co.za</span>
+      <span style="font-weight:300;font-size:8px;letter-spacing:0.1em;color:#6A7178;">Confidential</span>
+    </div>
+  </section>
+
+  <!-- PAGE 4 — SERVICES + OPERATIONS -->
+  <section class="page" data-screen-label="04 Services" style="background:#FFFFFF;display:flex;flex-direction:column;font-family:'Poppins',sans-serif;">
+    <div style="padding:22px 48px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #E4E6E9;flex-shrink:0;">
+      <img src="uploads/pasted-1783962574079-0.png" style="height:26px;width:auto;filter:grayscale(1) brightness(0.4) contrast(1.25);" alt="AfriResources" />
+      <span style="font-weight:500;font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:#B4B9BE;">04 · Services</span>
+    </div>
+
+    <div style="padding:30px 48px;flex:1;display:flex;flex-direction:column;gap:24px;">
+
+      <div>
+        <div style="display:flex;align-items:center;gap:13px;margin-bottom:6px;">
+          <div style="width:24px;height:1px;background:#9AA1A9;flex-shrink:0;"></div>
+          <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:32px;letter-spacing:0.02em;text-transform:uppercase;color:#0A0B0C;">Our Services</div>
+        </div>
+        <p style="font-weight:300;font-size:11.5px;color:#8B929A;line-height:1.75;margin:0 0 16px 37px;">Clients can take any one service in isolation — or hand us the full chain from mine gate to delivered tonnage.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#E4E6E9;border:1px solid #E4E6E9;">
+          <sc-for list="{{ services }}" as="s" hint-placeholder-count="4">
+            <div style="background:#FFFFFF;padding:20px 24px 24px;">
+              <div style="font-weight:500;font-size:9px;letter-spacing:0.24em;color:#B4B9BE;margin-bottom:12px;">{{ s.num }}</div>
+              <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:700;font-size:21px;letter-spacing:0.03em;text-transform:uppercase;color:#0A0B0C;margin-bottom:9px;">{{ s.title }}</div>
+              <p style="font-weight:300;font-size:11px;color:#5A6068;line-height:1.7;margin:0;">{{ s.body }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div>
+        <div style="display:flex;align-items:center;gap:13px;margin-bottom:14px;">
+          <div style="width:24px;height:1px;background:#9AA1A9;flex-shrink:0;"></div>
+          <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:26px;letter-spacing:0.02em;text-transform:uppercase;color:#0A0B0C;">Operational Excellence</div>
+        </div>
+        <div style="display:flex;flex-direction:column;">
+          <sc-for list="{{ opsRows }}" as="r" hint-placeholder-count="5">
+            <div style="display:flex;justify-content:space-between;gap:24px;align-items:baseline;padding:9px 0;border-top:1px solid #E9EBED;">
+              <span style="font-weight:500;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#9AA1A9;flex-shrink:0;">{{ r.label }}</span>
+              <span style="font-weight:300;font-size:11px;color:#3A4046;text-align:right;">{{ r.value }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+    </div>
+    <div style="background:#070809;padding:12px 48px;display:flex;justify-content:space-between;flex-shrink:0;">
+      <span style="font-weight:300;font-size:8px;letter-spacing:0.1em;color:#6A7178;">afri-resources.co.za</span>
+      <span style="font-weight:300;font-size:8px;letter-spacing:0.1em;color:#6A7178;">Confidential</span>
+    </div>
+  </section>
+
+  <!-- PAGE 5 — COAL PRODUCTS -->
+  <section class="page" data-screen-label="05 Coal Products" style="background:#FFFFFF;display:flex;flex-direction:column;font-family:'Poppins',sans-serif;">
+    <div style="padding:22px 48px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #E4E6E9;flex-shrink:0;">
+      <img src="uploads/pasted-1783962574079-0.png" style="height:26px;width:auto;filter:grayscale(1) brightness(0.4) contrast(1.25);" alt="AfriResources" />
+      <span style="font-weight:500;font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:#B4B9BE;">05 · Product Book</span>
+    </div>
+
+    <div style="padding:40px 48px;flex:1;">
+      <div style="display:flex;align-items:center;gap:13px;margin-bottom:8px;">
+        <div style="width:24px;height:1px;background:#9AA1A9;flex-shrink:0;"></div>
+        <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:36px;letter-spacing:0.02em;text-transform:uppercase;color:#0A0B0C;">Coal Products</div>
+      </div>
+      <p style="font-weight:300;font-size:12px;color:#8B929A;line-height:1.8;margin:0 0 26px 37px;">Supplied to domestic and export markets, blended and sized to customer specification. Availability confirmed per contract.</p>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#E4E6E9;border:1px solid #E4E6E9;">
+        <sc-for list="{{ coal }}" as="c" hint-placeholder-count="4">
+          <div style="background:#FFFFFF;padding:26px 18px 30px;">
+            <div style="font-weight:500;font-size:8.5px;letter-spacing:0.22em;text-transform:uppercase;color:#B4B9BE;margin-bottom:14px;">{{ c.num }} / Grade</div>
+            <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:34px;line-height:1;text-transform:uppercase;color:#0A0B0C;margin-bottom:24px;">{{ c.name }}</div>
+            <div style="display:flex;flex-direction:column;gap:16px;">
+              <sc-for list="{{ c.specs }}" as="s" hint-placeholder-count="4">
+                <div style="border-top:1px solid #E9EBED;padding-top:12px;">
+                  <div style="font-weight:500;font-size:8px;letter-spacing:0.18em;text-transform:uppercase;color:#9AA1A9;margin-bottom:6px;">{{ s.label }}</div>
+                  <div style="font-weight:400;font-size:11px;color:#0A0B0C;line-height:1.5;">{{ s.value }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <div style="background:#070809;padding:12px 48px;display:flex;justify-content:space-between;flex-shrink:0;">
+      <span style="font-weight:300;font-size:8px;letter-spacing:0.1em;color:#6A7178;">afri-resources.co.za</span>
+      <span style="font-weight:300;font-size:8px;letter-spacing:0.1em;color:#6A7178;">Confidential</span>
+    </div>
+  </section>
+
+  <!-- PAGE 6 — ADJACENT BOOK + INVESTORS -->
+  <section class="page" data-screen-label="06 Adjacent Book & Funding" style="background:#FFFFFF;display:flex;flex-direction:column;font-family:'Poppins',sans-serif;">
+    <div style="padding:22px 48px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #E4E6E9;flex-shrink:0;">
+      <img src="uploads/pasted-1783962574079-0.png" style="height:26px;width:auto;filter:grayscale(1) brightness(0.4) contrast(1.25);" alt="AfriResources" />
+      <span style="font-weight:500;font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:#B4B9BE;">06 · Adjacent Book &amp; Funding</span>
+    </div>
+
+    <div style="padding:38px 48px;flex:1;display:flex;flex-direction:column;gap:34px;">
+
+      <div>
+        <div style="display:flex;align-items:center;gap:13px;margin-bottom:8px;">
+          <div style="width:24px;height:1px;background:#9AA1A9;flex-shrink:0;"></div>
+          <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:34px;letter-spacing:0.02em;text-transform:uppercase;color:#0A0B0C;">Adjacent Book</div>
+        </div>
+        <p style="font-weight:300;font-size:12px;color:#8B929A;line-height:1.8;margin:0 0 20px 37px;">A growing chrome and manganese book alongside the core coal volume.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#E4E6E9;border:1px solid #E4E6E9;">
+          <sc-for list="{{ minerals }}" as="m" hint-placeholder-count="2">
+            <div style="background:#FFFFFF;padding:24px 26px 28px;">
+              <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:28px;line-height:1;text-transform:uppercase;color:#0A0B0C;margin-bottom:14px;">{{ m.name }}</div>
+              <p style="font-weight:300;font-size:11px;color:#5A6068;line-height:1.8;margin:0 0 16px;">{{ m.body }}</p>
+              <div style="display:flex;gap:30px;flex-wrap:wrap;">
+                <sc-for list="{{ m.specs }}" as="s" hint-placeholder-count="2">
+                  <div>
+                    <div style="font-weight:500;font-size:8px;letter-spacing:0.18em;text-transform:uppercase;color:#9AA1A9;margin-bottom:6px;">{{ s.label }}</div>
+                    <div style="font-weight:400;font-size:10.5px;color:#0A0B0C;">{{ s.value }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+    </div>
+    <div style="background:#070809;padding:12px 48px;display:flex;justify-content:space-between;flex-shrink:0;">
+      <span style="font-weight:300;font-size:8px;letter-spacing:0.1em;color:#6A7178;">afri-resources.co.za</span>
+      <span style="font-weight:300;font-size:8px;letter-spacing:0.1em;color:#6A7178;">Confidential</span>
+    </div>
+  </section>
+
+  <!-- PAGE 7 — COUNTERPARTIES -->
+  <section class="page" data-screen-label="07 Counterparties" style="background:#FFFFFF;display:flex;flex-direction:column;font-family:'Poppins',sans-serif;">
+    <div style="padding:22px 48px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #E4E6E9;flex-shrink:0;">
+      <img src="uploads/pasted-1783962574079-0.png" style="height:26px;width:auto;filter:grayscale(1) brightness(0.4) contrast(1.25);" alt="AfriResources" />
+      <span style="font-weight:500;font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:#B4B9BE;">07 · Counterparties</span>
+    </div>
+
+    <div style="padding:40px 48px;flex:1;">
+      <div style="display:flex;align-items:center;gap:13px;margin-bottom:8px;">
+        <div style="width:24px;height:1px;background:#9AA1A9;flex-shrink:0;"></div>
+        <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:36px;letter-spacing:0.02em;text-transform:uppercase;color:#0A0B0C;">Trusted Across the Value Chain</div>
+      </div>
+      <p style="font-weight:300;font-size:12px;color:#8B929A;line-height:1.8;margin:0 0 26px 37px;max-width:520px;">We transact daily with counterparties at every stage of the chain — from the mine gate through to the vessel.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#E4E6E9;border:1px solid #E4E6E9;">
+        <sc-for list="{{ partners }}" as="p" hint-placeholder-count="6">
+          <div style="background:#FFFFFF;padding:26px 26px 30px;">
+            <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:700;font-size:22px;letter-spacing:0.03em;text-transform:uppercase;color:#0A0B0C;margin-bottom:9px;">{{ p.title }}</div>
+            <div style="font-weight:300;font-size:11px;color:#8B929A;line-height:1.75;">{{ p.body }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <div style="background:#070809;padding:12px 48px;display:flex;justify-content:space-between;flex-shrink:0;">
+      <span style="font-weight:300;font-size:8px;letter-spacing:0.1em;color:#6A7178;">afri-resources.co.za</span>
+      <span style="font-weight:300;font-size:8px;letter-spacing:0.1em;color:#6A7178;">Confidential</span>
+    </div>
+  </section>
+
+  <!-- PAGE 8 — LEADERSHIP -->
+  <section class="page" data-screen-label="08 Leadership" style="background:#FFFFFF;display:flex;flex-direction:column;font-family:'Poppins',sans-serif;">
+    <div style="padding:22px 48px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #E4E6E9;flex-shrink:0;">
+      <img src="uploads/pasted-1783962574079-0.png" style="height:26px;width:auto;filter:grayscale(1) brightness(0.4) contrast(1.25);" alt="AfriResources" />
+      <span style="font-weight:500;font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:#B4B9BE;">08 · Leadership</span>
+    </div>
+
+    <div style="padding:34px 48px;flex:1;">
+      <div style="display:flex;align-items:center;gap:13px;margin-bottom:6px;">
+        <div style="width:24px;height:1px;background:#9AA1A9;flex-shrink:0;"></div>
+        <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:34px;letter-spacing:0.02em;text-transform:uppercase;color:#0A0B0C;">Leadership</div>
+      </div>
+      <p style="font-weight:300;font-size:11.5px;color:#8B929A;line-height:1.75;margin:0 0 20px 37px;">A lean executive team spanning trading, operations, finance and logistics across the Southern African mineral value chain.</p>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <sc-for list="{{ leadership }}" as="p" hint-placeholder-count="2">
+          <div style="display:grid;grid-template-columns:132px 1fr;border:1px solid #E4E6E9;">
+            <div style="background:linear-gradient(150deg,#EEF0F3,#ADB4BC 52%,#DEE2E7);display:flex;align-items:center;justify-content:center;padding:18px;">
+              <span style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:48px;letter-spacing:0.04em;color:rgba(10,11,12,0.34);">{{ p.initials }}</span>
+            </div>
+            <div style="padding:22px 26px 24px;">
+              <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:700;font-size:23px;letter-spacing:0.02em;text-transform:uppercase;color:#0A0B0C;">{{ p.name }}</div>
+              <div style="font-weight:500;font-size:8.5px;letter-spacing:0.24em;text-transform:uppercase;color:#8B929A;margin:6px 0 13px;">{{ p.role }}</div>
+              <sc-for list="{{ p.bio }}" as="para" hint-placeholder-count="2">
+                <p style="font-weight:300;font-size:10.5px;color:#5A6068;line-height:1.8;margin:0 0 9px;">{{ para }}</p>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <div style="background:#070809;padding:12px 48px;display:flex;justify-content:space-between;flex-shrink:0;">
+      <span style="font-weight:300;font-size:8px;letter-spacing:0.1em;color:#6A7178;">afri-resources.co.za</span>
+      <span style="font-weight:300;font-size:8px;letter-spacing:0.1em;color:#6A7178;">Confidential</span>
+    </div>
+  </section>
+
+  <!-- PAGE 9 — GOVERNANCE + ESG -->
+  <section class="page" data-screen-label="09 Governance & ESG" style="background:#FFFFFF;display:flex;flex-direction:column;font-family:'Poppins',sans-serif;">
+    <div style="padding:22px 48px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #E4E6E9;flex-shrink:0;">
+      <img src="uploads/pasted-1783962574079-0.png" style="height:26px;width:auto;filter:grayscale(1) brightness(0.4) contrast(1.25);" alt="AfriResources" />
+      <span style="font-weight:500;font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:#B4B9BE;">09 · Governance &amp; Responsibility</span>
+    </div>
+
+    <div style="padding:38px 48px;flex:1;display:flex;flex-direction:column;gap:34px;">
+
+      <div>
+        <div style="display:flex;align-items:center;gap:13px;margin-bottom:22px;">
+          <div style="width:24px;height:1px;background:#9AA1A9;flex-shrink:0;"></div>
+          <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:34px;letter-spacing:0.02em;text-transform:uppercase;color:#0A0B0C;">Transformation &amp; Governance</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">
+          <div style="background:#070809;padding:26px 22px;">
+            <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:42px;color:#F4F6F8;line-height:1;">100%</div>
+            <div style="font-weight:500;font-size:8.5px;letter-spacing:0.2em;text-transform:uppercase;color:#8B929A;margin:8px 0 13px;">Black-Owned</div>
+            <div style="height:1px;background:rgba(220,224,230,0.14);margin-bottom:13px;"></div>
+            <div style="font-weight:300;font-size:10.5px;color:#D6DAE0;line-height:1.75;">Fully black-owned enterprise committed to B-BBEE transformation and economic empowerment.</div>
+          </div>
+          <div style="background:#070809;padding:26px 22px;">
+            <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:32px;color:#F4F6F8;line-height:1.1;">Level 1</div>
+            <div style="font-weight:500;font-size:8.5px;letter-spacing:0.2em;text-transform:uppercase;color:#8B929A;margin:8px 0 13px;">B-BBEE Contributor</div>
+            <div style="height:1px;background:rgba(220,224,230,0.14);margin-bottom:13px;"></div>
+            <div style="font-weight:300;font-size:10.5px;color:#D6DAE0;line-height:1.75;">Certificate available on request from an accredited verification agency.</div>
+          </div>
+          <div style="background:#070809;padding:26px 22px;">
+            <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:700;font-size:20px;color:#F4F6F8;line-height:1.3;">2018/362497/07</div>
+            <div style="font-weight:500;font-size:8.5px;letter-spacing:0.2em;text-transform:uppercase;color:#8B929A;margin:8px 0 13px;">Company Registration</div>
+            <div style="height:1px;background:rgba(220,224,230,0.14);margin-bottom:13px;"></div>
+            <div style="font-weight:400;font-size:10.5px;color:#D6DAE0;">VAT: 4840287652</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div style="display:flex;align-items:center;gap:13px;margin-bottom:22px;">
+          <div style="width:24px;height:1px;background:#9AA1A9;flex-shrink:0;"></div>
+          <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:30px;letter-spacing:0.02em;text-transform:uppercase;color:#0A0B0C;">How We Trade Matters</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#E4E6E9;border:1px solid #E4E6E9;">
+          <sc-for list="{{ esg }}" as="e" hint-placeholder-count="4">
+            <div style="background:#FFFFFF;padding:22px 24px 26px;">
+              <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:700;font-size:20px;letter-spacing:0.03em;text-transform:uppercase;color:#0A0B0C;margin-bottom:8px;">{{ e.title }}</div>
+              <p style="font-weight:300;font-size:11px;color:#5A6068;line-height:1.75;margin:0;">{{ e.body }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+    </div>
+    <div style="background:#070809;padding:12px 48px;display:flex;justify-content:space-between;flex-shrink:0;">
+      <span style="font-weight:300;font-size:8px;letter-spacing:0.1em;color:#6A7178;">afri-resources.co.za</span>
+      <span style="font-weight:300;font-size:8px;letter-spacing:0.1em;color:#6A7178;">Confidential</span>
+    </div>
+  </section>
+
+  <!-- PAGE 10 — CONTACT -->
+  <section class="page" data-screen-label="10 Contact" style="position:relative;overflow:hidden;background:#070809;display:flex;flex-direction:column;font-family:'Poppins',sans-serif;">
+    <div style="position:absolute;inset:0;background-image:url('uploads/pasted-1783327167598-0.png');background-size:cover;background-position:center;filter:grayscale(1);"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(7,8,9,0.97) 46%,rgba(7,8,9,0.88) 72%,rgba(7,8,9,0.7) 100%);"></div>
+    <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(214,218,224,0.6) 50%,transparent);"></div>
+
+    <div style="position:relative;z-index:2;padding:52px 60px 0;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;">
+      <img src="uploads/pasted-1783962574079-0.png" style="height:34px;width:auto;filter:grayscale(1) brightness(2.5) contrast(0.95);" alt="AfriResources" />
+      <span style="font-weight:500;font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:#6A7178;">10</span>
+    </div>
+
+    <div style="position:relative;z-index:2;flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 60px 40px;">
+      <div style="font-weight:500;font-size:10px;letter-spacing:0.32em;text-transform:uppercase;color:#9AA1A9;margin-bottom:24px;">Get In Touch</div>
+      <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:66px;line-height:0.94;text-transform:uppercase;margin-bottom:28px;background:linear-gradient(172deg,#FBFCFD 6%,#C6CCD3 40%,#8B929A 62%,#D5DAE0 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">Looking for a trusted commodity trading partner?</div>
+      <div style="width:48px;height:1px;background:rgba(214,218,224,0.5);margin-bottom:30px;"></div>
+      <p style="font-weight:300;font-size:13.5px;color:#9AA1A9;line-height:1.95;max-width:450px;margin:0 0 44px;">Whether you're sourcing product, seeking logistics support or exploring strategic partnerships, our team is ready to help.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px 40px;max-width:520px;">
+        <div>
+          <div style="font-weight:500;font-size:8px;letter-spacing:0.24em;text-transform:uppercase;color:#6A7178;margin-bottom:7px;">Trading Desk</div>
+          <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:600;font-size:20px;letter-spacing:0.02em;color:#F4F6F8;">trading@afri-resources.co.za</div>
+        </div>
+        <div>
+          <div style="font-weight:500;font-size:8px;letter-spacing:0.24em;text-transform:uppercase;color:#6A7178;margin-bottom:7px;">Operations</div>
+          <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:600;font-size:20px;letter-spacing:0.02em;color:#F4F6F8;">ops@afri-resources.co.za</div>
+        </div>
+        <div>
+          <div style="font-weight:500;font-size:8px;letter-spacing:0.24em;text-transform:uppercase;color:#6A7178;margin-bottom:7px;">Website</div>
+          <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:600;font-size:20px;letter-spacing:0.02em;color:#F4F6F8;">afri-resources.co.za</div>
+        </div>
+        <div>
+          <div style="font-weight:500;font-size:8px;letter-spacing:0.24em;text-transform:uppercase;color:#6A7178;margin-bottom:7px;">Address</div>
+          <div style="font-weight:300;font-size:12.5px;color:#D6DAE0;line-height:1.7;">51 Simplyning Street, Moreleta Park<br />Pretoria, 0181, South Africa</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="position:relative;z-index:2;padding:18px 60px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;border-top:1px solid rgba(220,224,230,0.12);">
+      <span style="font-weight:300;font-size:8px;letter-spacing:0.1em;color:#6A7178;">afri-resources.co.za</span>
+      <span style="font-weight:300;font-size:8px;letter-spacing:0.1em;color:#6A7178;">© 2026 AfriResources (Pty) Ltd · All Rights Reserved</span>
+    </div>
+  </section>
+
+</doc-page>
+
+<template id="__bundler_thumbnail">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+    <rect width="512" height="512" fill="#101113"/>
+    <rect x="146" y="86" width="220" height="310" fill="#FFFFFF"/>
+    <rect x="146" y="86" width="220" height="60" fill="#070809"/>
+    <text x="256" y="300" font-family="sans-serif" font-weight="800" font-size="56" text-anchor="middle" fill="#0A0B0C">AR</text>
+    <text x="256" y="346" font-family="sans-serif" font-weight="500" font-size="16" letter-spacing="4" text-anchor="middle" fill="#8B929A">PROFILE</text>
+  </svg>
+</template>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      coverStats: [
+        { value: '16,800+', label: 'Tons Delivered' },
+        { value: 'Multiple', label: 'Mining Partners' },
+        { value: 'Dual', label: 'Domestic & Export' },
+        { value: 'End-to-End', label: 'Supply Chain' },
+      ],
+      facts: [
+        { label: 'Established', value: '2018' },
+        { label: 'Ownership', value: '100% Black-Owned' },
+        { label: 'Markets', value: 'Domestic & Export' },
+        { label: 'Footprint', value: 'Pretoria · Mpumalanga · JHB' },
+      ],
+      values: ['Honesty', 'Integrity', 'Excellence', 'Efficiency'],
+      model: [
+        { num: '01', title: 'Mine', body: 'Direct offtake from established South African mining operations under long-term agreements.' },
+        { num: '02', title: 'Quality', body: 'Sampling, beneficiation and blending to the agreed customer or export specification.' },
+        { num: '03', title: 'Trading', body: 'Commercial structuring of the supply agreement, pricing, terms and counterparty risk.' },
+        { num: '04', title: 'Logistics', body: 'Road, rail and export coordination through vetted transport and terminal partners.' },
+        { num: '05', title: 'Customer', body: 'Delivered tonnage, reconciled documentation and one point of accountability.' },
+      ],
+      services: [
+        { num: '01', title: 'Strategic Sourcing', body: 'Direct procurement from leading South African mining operations through long-term commercial relationships.' },
+        { num: '02', title: 'Processing & Quality', body: 'Coal beneficiation and blending solutions designed to meet customer specifications and export quality requirements.' },
+        { num: '03', title: 'Logistics', body: 'Integrated road, rail and export coordination supported by documented operational procedures and quality assurance.' },
+        { num: '04', title: 'Commodity Trading', body: 'Commercial management of domestic and export supply agreements with industrial customers and international trading partners.' },
+      ],
+      opsRows: [
+        { label: 'Quality Assurance', value: 'Independent verification against contract specification' },
+        { label: 'Sampling Protocols', value: 'Documented, applied load by load' },
+        { label: 'Commercial Reconciliation', value: 'Weekly against PO, tonnage and specification' },
+        { label: 'Supply Chain Visibility', value: 'Tracked from mine gate to delivery point' },
+        { label: 'Documentation', value: 'Full evidentiary pack per consignment' },
+      ],
+      coal: [
+        { num: '01', name: 'RB2', specs: [
+          { label: 'Domestic Supply', value: 'Available on contract' },
+          { label: 'Export Supply', value: 'Richards Bay channel' },
+          { label: 'Applications', value: 'Power generation, industrial boilers' },
+          { label: 'Availability', value: 'Confirmed per agreement' },
+        ] },
+        { num: '02', name: 'RB3', specs: [
+          { label: 'Domestic Supply', value: 'Available on contract' },
+          { label: 'Export Supply', value: 'Richards Bay channel' },
+          { label: 'Applications', value: 'Utility and industrial blending' },
+          { label: 'Availability', value: 'Confirmed per agreement' },
+        ] },
+        { num: '03', name: '4800 kcal', specs: [
+          { label: 'Domestic Supply', value: 'Available on contract' },
+          { label: 'Export Supply', value: 'Regional and seaborne' },
+          { label: 'Applications', value: 'Cement, industrial thermal use' },
+          { label: 'Availability', value: 'Confirmed per agreement' },
+        ] },
+        { num: '04', name: 'A-Grade Peas', specs: [
+          { label: 'Domestic Supply', value: 'Sized product, bulk or bagged' },
+          { label: 'Export Supply', value: 'By arrangement' },
+          { label: 'Applications', value: 'Industrial heating, agriculture' },
+          { label: 'Availability', value: 'Confirmed per agreement' },
+        ] },
+      ],
+      minerals: [
+        { name: 'Chrome', body: 'South Africa holds the majority of global chrome reserves. We supply ore and concentrates to ferrochrome producers and export buyers.', specs: [
+          { label: 'Grades', value: 'Metallurgical & chemical' },
+          { label: 'Markets', value: 'Domestic & export' },
+        ] },
+        { name: 'Manganese', body: 'The Northern Cape holds the world\u2019s largest manganese reserves. We trade steelmaking-grade ore to domestic smelters and international terminals.', specs: [
+          { label: 'Content', value: 'From 32%+ Mn' },
+          { label: 'Markets', value: 'Domestic & export' },
+        ] },
+      ],
+      partners: [
+        { title: 'Mining Companies', body: 'Producers supplying contracted volume at the mine gate.' },
+        { title: 'Industrial Customers', body: 'Domestic users taking sized and thermal product.' },
+        { title: 'Transport Partners', body: 'Road and rail operators moving bulk tonnage.' },
+        { title: 'Processing Facilities', body: 'Beneficiation and screening to specification.' },
+        { title: 'Commodity Traders', body: 'Regional and international trading houses.' },
+        { title: 'Export Partners', body: 'Terminal and seaborne channel access.' },
+      ],
+      leadership: [
+        { initials: 'BM', name: 'Bongani Mthethwa', role: 'Chief Executive Officer', bio: [
+          "Bongani Mthethwa is the Founder and Chief Executive Officer of AfriResources, providing the strategic vision and leadership behind the company's growth into an integrated mining, commodity trading, and logistics business.",
+          'With extensive experience across coal procurement, commodity trading, project development, and commercial negotiations, Bongani has built a strong network of mining partners, logistics providers, financiers, and industrial customers throughout Southern Africa. He leads the company\u2019s growth strategy, strategic partnerships, capital raising initiatives, and expansion into both domestic and international markets.',
+        ] },
+        { initials: 'TD', name: 'Thulani K. Dhlamini', role: 'Chief Operating Officer', bio: [
+          'Thulani K. Dhlamini is the Chief Operating Officer of AfriResources, responsible for leading the company\u2019s operations, supply chain, logistics, and commercial execution across Southern Africa.',
+          'With over a decade of experience in finance, supply chain management, and cross-border logistics, Thulani has held leadership roles at Samsung SDS South Africa and Eaton Electric South Africa. His expertise spans commodity trading, process optimisation, automation, and operational strategy.',
+        ] },
+      ],
+      investors: [
+        { title: 'Trade Finance', body: 'Facility structures against contracted offtake and confirmed purchase orders.' },
+        { title: 'Working Capital', body: 'Funding the gap between mine payment terms and customer settlement.' },
+        { title: 'Strategic Investment', body: 'Equity participation in the growth of the trading and logistics platform.' },
+        { title: 'Joint Ventures', body: 'Co-invested structures with producers, processors and logistics operators.' },
+        { title: 'Offtake Partnerships', body: 'Long-term volume agreements with industrial and international buyers.' },
+      ],
+      esg: [
+        { title: 'Safety', body: 'We work only with partners who meet recognised mine and transport safety standards.' },
+        { title: 'Governance', body: 'Documented policies, KYC onboarding and clean commercial structures on every deal.' },
+        { title: 'Responsible Trading', body: 'Verified origin, honest specification and transparent reconciliation.' },
+        { title: 'Communities', body: 'Local employment and procurement wherever our operations touch the ground.' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

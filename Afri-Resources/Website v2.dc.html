@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+html { scroll-behavior:smooth; }
+body { margin:0; background:#070809; }
+* { box-sizing:border-box; }
+img { max-width:100%; }
+a { color:#D6DAE0; } a:hover { color:#FFFFFF; }
+
+@media (max-width:1180px) {
+  nav > div { gap:22px !important; }
+  nav a { font-size:10px !important; }
+}
+@media (max-width:1024px) {
+  nav { padding:0 32px !important; }
+  section, footer { padding-left:40px !important; padding-right:40px !important; padding-top:100px !important; padding-bottom:100px !important; }
+  #home h1 { font-size:74px !important; }
+  section h2 { font-size:50px !important; }
+  #capabilities > div, #operations > div, #contact > div, #about > div, #investors > div { grid-template-columns:1fr !important; gap:56px !important; }
+  #capabilities > div > div:last-child { grid-template-columns:1fr 1fr !important; }
+  #products > div > div:nth-child(2), #fleet > div > div:nth-child(2) { grid-template-columns:1fr 1fr !important; }
+  #fleet > div > div:nth-child(2) > div { grid-column:auto !important; height:360px !important; }
+  #operations > div > div:first-child { height:420px !important; }
+  #model > div > div:last-child { grid-template-columns:1fr 1fr !important; }
+  #why > div > div:last-child { grid-template-columns:1fr 1fr !important; }
+  #team > div > div:nth-child(2) { grid-template-columns:1fr !important; }
+  section:not([id]) h2 { font-size:56px !important; }
+}
+@media (max-width:720px) {
+  nav { padding:0 20px !important; height:64px !important; }
+  nav > div { display:none !important; }
+  nav img { height:28px !important; }
+  section, footer { padding-top:80px !important; padding-bottom:80px !important; padding-left:22px !important; padding-right:22px !important; }
+  #home { padding:0 !important; min-height:auto !important; }
+  #home > div:nth-of-type(3) { display:none !important; }
+  #home > div:last-child { padding:80px 22px !important; }
+  #home h1 { font-size:clamp(38px,10.5vw,50px) !important; }
+  section h2 { font-size:clamp(32px,8.5vw,42px) !important; }
+  section:not([id]) h2 { font-size:clamp(34px,10vw,46px) !important; }
+  #home > div:last-child > div:last-child { margin-top:52px !important; }
+  #home > div:last-child > div:last-child > div { padding:14px 26px 14px 0 !important; border-right:none !important; }
+  #capabilities > div > div:last-child { grid-template-columns:1fr !important; }
+  #products > div > div:nth-child(2) { grid-template-columns:1fr !important; }
+  #products > div > div:last-child { grid-template-columns:1fr !important; }
+  #fleet > div > div:nth-child(2) { grid-template-columns:1fr !important; }
+  #fleet > div > div:nth-child(2) > div { grid-column:auto !important; height:280px !important; }
+  #operations > div > div:first-child { height:300px !important; }
+  #partners > div > div:nth-child(2) { grid-template-columns:1fr 1fr !important; }
+  #partners > div > div:nth-child(2) > div { padding:30px 12px !important; }
+  #model > div > div:last-child { grid-template-columns:1fr !important; }
+  #why > div > div:last-child { grid-template-columns:1fr !important; }
+  #esg > div > div:last-child { grid-template-columns:1fr 1fr !important; }
+  footer > div:first-child { grid-template-columns:1fr 1fr !important; gap:44px !important; }
+}
+</style>
+</helmet>
+
+<!-- NAV -->
+<nav style="position:sticky;top:0;z-index:100;height:76px;background:rgba(7,8,9,0.92);backdrop-filter:blur(18px);border-bottom:1px solid rgba(220,224,230,0.10);display:flex;align-items:center;padding:0 64px;justify-content:space-between;font-family:'Poppins',sans-serif;">
+  <a href="#home" style="text-decoration:none;display:flex;align-items:center;">
+    <img src="uploads/pasted-1783962574079-0.png" alt="Afri-Resources" style="height:34px;filter:grayscale(1) brightness(2.6) contrast(0.9);transition:filter 0.5s ease;" style-hover="filter:grayscale(0) brightness(1) contrast(1);" />
+  </a>
+  <div style="display:flex;gap:32px;align-items:center;">
+    <a href="#about" style="font-weight:500;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#9AA1A9;text-decoration:none;transition:color 0.3s;" style-hover="color:#F4F6F8;">About</a>
+    <a href="#capabilities" style="font-weight:500;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#9AA1A9;text-decoration:none;transition:color 0.3s;" style-hover="color:#F4F6F8;">Services</a>
+    <a href="#products" style="font-weight:500;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#9AA1A9;text-decoration:none;transition:color 0.3s;" style-hover="color:#F4F6F8;">Products</a>
+    <a href="#operations" style="font-weight:500;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#9AA1A9;text-decoration:none;transition:color 0.3s;" style-hover="color:#F4F6F8;">Operations</a>
+    <a href="#team" style="font-weight:500;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#9AA1A9;text-decoration:none;transition:color 0.3s;" style-hover="color:#F4F6F8;">Leadership</a>
+    <a href="#investors" style="font-weight:500;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#9AA1A9;text-decoration:none;transition:color 0.3s;" style-hover="color:#F4F6F8;">Investors</a>
+    <a href="#contact" style="font-weight:500;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#9AA1A9;text-decoration:none;transition:color 0.3s;" style-hover="color:#F4F6F8;">Contact</a>
+  </div>
+  <a href="#contact" style="padding:13px 30px;background:linear-gradient(135deg,#EEF0F3 0%,#ADB4BC 52%,#DEE2E7 100%);color:#0A0B0C;font-weight:600;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:box-shadow 0.4s ease;" style-hover="box-shadow:0 0 28px rgba(214,218,224,0.35);color:#0A0B0C;">Enquire</a>
+</nav>
+
+<!-- HERO -->
+<section id="home" data-screen-label="Home" style="min-height:calc(100vh - 76px);position:relative;overflow:hidden;display:flex;align-items:center;background:#070809;font-family:'Poppins',sans-serif;">
+  <div style="position:absolute;inset:0;background-image:url('uploads/pasted-1783327202789-0.png');background-size:cover;background-position:center;opacity:0.32;"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(7,8,9,0.98) 30%,rgba(7,8,9,0.82) 55%,rgba(7,8,9,0.45) 100%);"></div>
+  <div style="position:absolute;right:0;bottom:0;top:100px;width:44%;display:flex;align-items:flex-end;justify-content:flex-end;z-index:1;">
+    <img src="assets/photo-truck-coal.png" alt="Haul truck loaded with coal" style="max-width:100%;max-height:92%;object-fit:contain;filter:grayscale(1) contrast(1.08) brightness(0.92);transition:filter 0.7s ease;" style-hover="filter:grayscale(0) contrast(1) brightness(1);" />
+  </div>
+  <div style="position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(214,218,224,0.5) 50%,transparent);z-index:3;"></div>
+
+  <div style="position:relative;z-index:2;max-width:1460px;margin:0 auto;padding:90px 64px;width:100%;">
+    <div style="max-width:880px;" data-reveal>
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:30px;">
+        <div style="width:32px;height:1px;background:linear-gradient(90deg,#D6DAE0,transparent);"></div>
+        <span style="font-weight:500;font-size:11px;letter-spacing:0.34em;text-transform:uppercase;color:#9AA1A9;">Southern Africa · Commodities, Mining Services, Logistics</span>
+      </div>
+      <h1 style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:108px;line-height:0.92;text-transform:uppercase;margin:0 0 34px;background:linear-gradient(172deg,#FBFCFD 6%,#C6CCD3 36%,#8B929A 58%,#D5DAE0 80%,#F4F6F8 98%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">Integrated commodity trading &amp; mining services.</h1>
+      <p style="font-weight:300;font-size:16px;color:#9AA1A9;line-height:1.9;max-width:600px;margin:0 0 48px;">AfriResources delivers integrated commodity trading, mining services and logistics solutions across Southern Africa. Through strategic sourcing, commercial expertise and reliable end-to-end execution, <span style="color:#F4F6F8;">we connect producers with domestic and international markets.</span></p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;">
+        <a href="#capabilities" style="padding:16px 38px;background:linear-gradient(135deg,#EEF0F3 0%,#ADB4BC 52%,#DEE2E7 100%);color:#0A0B0C;font-weight:600;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:box-shadow 0.4s ease;" style-hover="box-shadow:0 0 32px rgba(214,218,224,0.4);color:#0A0B0C;">Our Services</a>
+        <a href="#contact" style="padding:16px 38px;background:transparent;color:#D6DAE0;font-weight:600;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(220,224,230,0.25);transition:border-color 0.4s ease;" style-hover="border-color:#F4F6F8;color:#FFFFFF;">Talk to Trading</a>
+      </div>
+    </div>
+    <div style="display:flex;margin-top:76px;flex-wrap:wrap;" data-reveal>
+      <sc-for list="{{ stats }}" as="st" hint-placeholder-count="4">
+        <div style="padding:0 40px;border-right:1px solid rgba(220,224,230,0.14);">
+          <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:42px;line-height:1;background:linear-gradient(175deg,#FBFCFD 8%,#C6CCD3 40%,#878E96 62%,#D5DAE0 88%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">{{ st.value }}</div>
+          <div style="font-weight:500;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#6A7178;margin-top:8px;">{{ st.label }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" data-screen-label="About" style="background:#0C0D0F;padding:140px 64px;border-top:1px solid rgba(220,224,230,0.08);font-family:'Poppins',sans-serif;">
+  <div style="max-width:1460px;margin:0 auto;display:grid;grid-template-columns:0.9fr 1.2fr;gap:100px;align-items:start;">
+    <div data-reveal>
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;">
+        <div style="width:24px;height:1px;background:#6A7178;"></div>
+        <span style="font-weight:500;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#6A7178;">01 / About</span>
+      </div>
+      <h2 style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:64px;line-height:0.96;text-transform:uppercase;color:#F4F6F8;margin:0 0 32px;">Built for the way commodities actually move.</h2>
+      <div style="display:flex;flex-direction:column;gap:0;max-width:420px;">
+        <sc-for list="{{ aboutFacts }}" as="f" hint-placeholder-count="4">
+          <div style="display:flex;justify-content:space-between;gap:20px;align-items:baseline;padding:15px 0;border-top:1px solid rgba(220,224,230,0.12);">
+            <span style="font-weight:500;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#6A7178;">{{ f.label }}</span>
+            <span style="font-weight:400;font-size:14px;color:#F4F6F8;text-align:right;">{{ f.value }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <div data-reveal style="display:flex;flex-direction:column;gap:26px;padding-top:8px;">
+      <p style="font-weight:300;font-size:19px;color:#F4F6F8;line-height:1.75;margin:0;">AfriResources is a 100% black-owned commodity trading, mining services and logistics company operating across Southern Africa.</p>
+      <p style="font-weight:300;font-size:15px;color:#9AA1A9;line-height:1.95;margin:0;">We source bulk minerals directly from established mining operations, manage quality and beneficiation to customer specification, and coordinate road, rail and export logistics through a network of trusted partners. Our customers span domestic industrial users, utilities and international trading houses.</p>
+      <p style="font-weight:300;font-size:15px;color:#9AA1A9;line-height:1.95;margin:0;">The business is deliberately built as a single commercial thread — sourcing, quality, trading and logistics under one accountable team — so that counterparties deal with one point of contact from mine to delivery. That structure is what allows us to move product reliably at a scale usually associated with much larger houses, while keeping the responsiveness of an owner-led operation.</p>
+      <p style="font-weight:300;font-size:15px;color:#9AA1A9;line-height:1.95;margin:0;">Coal remains our largest traded volume, alongside a growing chrome and manganese book, supported by documented governance, KYC onboarding and commercial structures suitable for institutional funders and export partners.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BUSINESS MODEL -->
+<section id="model" data-screen-label="Business Model" style="background:#070809;padding:140px 64px;border-top:1px solid rgba(220,224,230,0.08);font-family:'Poppins',sans-serif;">
+  <div style="max-width:1460px;margin:0 auto;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:64px;flex-wrap:wrap;gap:24px;" data-reveal>
+      <div>
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;">
+          <div style="width:24px;height:1px;background:#6A7178;"></div>
+          <span style="font-weight:500;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#6A7178;">02 / Business Model</span>
+        </div>
+        <h2 style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:64px;line-height:0.96;text-transform:uppercase;margin:0;background:linear-gradient(172deg,#FBFCFD 6%,#C6CCD3 40%,#8B929A 62%,#D5DAE0 88%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">One thread, mine to customer.</h2>
+      </div>
+      <p style="font-weight:300;font-size:14px;color:#6A7178;line-height:1.9;max-width:340px;margin:0;">Every ton passes through five controlled stages. We own the commercial accountability at each one.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:rgba(220,224,230,0.10);border:1px solid rgba(220,224,230,0.10);" data-reveal>
+      <sc-for list="{{ model }}" as="m" hint-placeholder-count="5">
+        <div style="background:#070809;padding:40px 30px 46px;transition:background 0.4s ease;" style-hover="background:#0C0D0F;">
+          <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:34px;line-height:1;color:rgba(220,224,230,0.18);margin-bottom:28px;">{{ m.num }}</div>
+          <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:700;font-size:26px;letter-spacing:0.03em;text-transform:uppercase;color:#F4F6F8;margin-bottom:14px;">{{ m.title }}</div>
+          <p style="font-weight:300;font-size:13px;color:#9AA1A9;line-height:1.8;margin:0;">{{ m.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITIES / SERVICES -->
+<section id="capabilities" data-screen-label="Services" style="background:#0C0D0F;padding:140px 64px;border-top:1px solid rgba(220,224,230,0.08);font-family:'Poppins',sans-serif;">
+  <div style="max-width:1460px;margin:0 auto;display:grid;grid-template-columns:0.9fr 1.3fr;gap:100px;">
+    <div data-reveal>
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;">
+        <div style="width:24px;height:1px;background:#6A7178;"></div>
+        <span style="font-weight:500;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#6A7178;">03 / Services</span>
+      </div>
+      <h2 style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:64px;line-height:0.96;text-transform:uppercase;color:#F4F6F8;margin:0 0 28px;">Four services, one integrated offer.</h2>
+      <p style="font-weight:300;font-size:15px;color:#9AA1A9;line-height:1.9;margin:0;max-width:400px;">Clients can take any one service in isolation — or hand us the full chain from mine gate to delivered tonnage.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(220,224,230,0.10);" data-reveal>
+      <sc-for list="{{ capabilities }}" as="c" hint-placeholder-count="4">
+        <div style="background:#0C0D0F;padding:36px 40px 44px;">
+          <div style="font-weight:500;font-size:11px;letter-spacing:0.28em;color:#4A5057;margin-bottom:26px;">{{ c.num }}</div>
+          <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:700;font-size:26px;letter-spacing:0.03em;text-transform:uppercase;color:#F4F6F8;margin-bottom:14px;">{{ c.title }}</div>
+          <p style="font-weight:300;font-size:13px;color:#9AA1A9;line-height:1.8;margin:0;">{{ c.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT BOOK -->
+<section id="products" data-screen-label="Products" style="background:#070809;padding:140px 64px;border-top:1px solid rgba(220,224,230,0.08);font-family:'Poppins',sans-serif;">
+  <div style="max-width:1460px;margin:0 auto;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:64px;flex-wrap:wrap;gap:24px;" data-reveal>
+      <div>
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;">
+          <div style="width:24px;height:1px;background:#6A7178;"></div>
+          <span style="font-weight:500;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#6A7178;">04 / Product Book</span>
+        </div>
+        <h2 style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:64px;line-height:0.96;text-transform:uppercase;margin:0;background:linear-gradient(172deg,#FBFCFD 6%,#C6CCD3 40%,#8B929A 62%,#D5DAE0 88%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">Coal products.</h2>
+      </div>
+      <p style="font-weight:300;font-size:14px;color:#6A7178;line-height:1.9;max-width:340px;margin:0;">Supplied to domestic and export markets, blended and sized to customer specification. Availability confirmed per contract.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(220,224,230,0.10);border:1px solid rgba(220,224,230,0.10);">
+      <sc-for list="{{ coal }}" as="c" hint-placeholder-count="4">
+        <div data-reveal style="background:#070809;padding:40px 34px 46px;transition:background 0.4s ease;" style-hover="background:#0C0D0F;">
+          <div style="font-weight:500;font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:#6A7178;margin-bottom:20px;">{{ c.num }} / Grade</div>
+          <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:42px;line-height:1;text-transform:uppercase;color:#F4F6F8;margin-bottom:30px;">{{ c.name }}</div>
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <sc-for list="{{ c.specs }}" as="s" hint-placeholder-count="4">
+              <div style="border-top:1px solid rgba(220,224,230,0.12);padding-top:13px;">
+                <div style="font-weight:500;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#6A7178;margin-bottom:7px;">{{ s.label }}</div>
+                <div style="font-weight:400;font-size:14px;color:#F4F6F8;line-height:1.5;">{{ s.value }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(220,224,230,0.10);border:1px solid rgba(220,224,230,0.10);border-top:none;">
+      <sc-for list="{{ minerals }}" as="m" hint-placeholder-count="2">
+        <div data-reveal style="background:#070809;padding:38px 34px 42px;display:flex;flex-wrap:wrap;gap:28px;align-items:baseline;justify-content:space-between;transition:background 0.4s ease;" style-hover="background:#0C0D0F;">
+          <div>
+            <div style="font-weight:500;font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:#6A7178;margin-bottom:14px;">Adjacent Book</div>
+            <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:38px;line-height:1;text-transform:uppercase;color:#F4F6F8;">{{ m.name }}</div>
+          </div>
+          <div style="display:flex;gap:40px;flex-wrap:wrap;">
+            <sc-for list="{{ m.specs }}" as="s" hint-placeholder-count="2">
+              <div>
+                <div style="font-weight:500;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#6A7178;margin-bottom:7px;">{{ s.label }}</div>
+                <div style="font-weight:400;font-size:14px;color:#F4F6F8;line-height:1.5;">{{ s.value }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- OPERATIONS -->
+<section id="operations" data-screen-label="Operations" style="background:#0C0D0F;padding:140px 64px;border-top:1px solid rgba(220,224,230,0.08);font-family:'Poppins',sans-serif;">
+  <div style="max-width:1460px;margin:0 auto;display:grid;grid-template-columns:0.85fr 1.15fr;gap:80px;align-items:center;">
+    <div style="overflow:hidden;height:600px;" data-reveal>
+      <img src="uploads/pasted-1783327202789-0.png" alt="Coal aggregate close-up" style="width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) contrast(1.12);transition:filter 0.6s ease, transform 0.6s ease;" style-hover="filter:grayscale(0) contrast(1);transform:scale(1.03);" />
+    </div>
+    <div data-reveal>
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;">
+        <div style="width:24px;height:1px;background:#6A7178;"></div>
+        <span style="font-weight:500;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#6A7178;">05 / Operations</span>
+      </div>
+      <h2 style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:58px;line-height:0.98;text-transform:uppercase;color:#F4F6F8;margin:0 0 26px;">Operational excellence.</h2>
+      <p style="font-weight:300;font-size:15px;color:#9AA1A9;line-height:1.9;margin:0 0 44px;max-width:520px;">We work load by load. Every consignment moves under documented protocols, reconciled against supplier tonnage and customer specification before dispatch — and evidenced end to end.</p>
+      <div style="display:flex;flex-direction:column;">
+        <sc-for list="{{ opsRows }}" as="r" hint-placeholder-count="5">
+          <div style="display:flex;justify-content:space-between;gap:28px;align-items:baseline;padding:20px 0;border-top:1px solid rgba(220,224,230,0.12);">
+            <span style="font-weight:500;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:#6A7178;flex-shrink:0;">{{ r.label }}</span>
+            <span style="font-weight:400;font-size:14px;color:#F4F6F8;text-align:right;line-height:1.6;">{{ r.value }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGISTICS BAND -->
+<section data-screen-label="Logistics" style="position:relative;overflow:hidden;padding:170px 64px;border-top:1px solid rgba(220,224,230,0.08);font-family:'Poppins',sans-serif;background:#070809;cursor:pointer;">
+  <div style="position:absolute;inset:0;background-image:url('assets/photo-port-cranes.png');background-size:cover;background-position:center 60%;filter:grayscale(1) contrast(1.05) brightness(0.5);transition:filter 0.8s ease;" style-hover="filter:grayscale(0) contrast(1) brightness(0.58);"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(7,8,9,0.94) 25%,rgba(7,8,9,0.55) 65%,rgba(7,8,9,0.3) 100%);pointer-events:none;"></div>
+  <div style="position:relative;max-width:1460px;margin:0 auto;pointer-events:none;" data-reveal>
+    <div style="font-weight:500;font-size:11px;letter-spacing:0.34em;text-transform:uppercase;color:#9AA1A9;margin-bottom:24px;">Logistics</div>
+    <h2 style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:84px;line-height:0.94;text-transform:uppercase;color:#F4F6F8;margin:0 0 30px;max-width:820px;">From mine to customer — on road and rail.</h2>
+    <p style="font-weight:300;font-size:16px;color:#D6DAE0;line-height:1.9;max-width:620px;margin:0;">Working alongside trusted mining, transport and logistics partners, AfriResources coordinates the movement of bulk commodities from mine to customer through integrated road and rail solutions.</p>
+  </div>
+</section>
+
+<!-- FLEET -->
+<section id="fleet" data-screen-label="Fleet" style="background:#070809;padding:140px 64px;border-top:1px solid rgba(220,224,230,0.08);font-family:'Poppins',sans-serif;">
+  <div style="max-width:1460px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:rgba(220,224,230,0.10);border:1px solid rgba(220,224,230,0.10);">
+      <div data-reveal style="grid-column:span 3;position:relative;overflow:hidden;height:440px;background:#070809;cursor:pointer;">
+        <img src="assets/photo-truck-coal.png" alt="Haul truck at a partner mining operation" style="width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) contrast(1.08) brightness(0.9);transition:filter 0.6s ease, transform 0.6s ease;" style-hover="filter:grayscale(0) contrast(1) brightness(1);transform:scale(1.03);" />
+      </div>
+      <div data-reveal style="grid-column:span 2;position:relative;overflow:hidden;height:440px;background:#070809;cursor:pointer;">
+        <img src="assets/photo-port-cranes.png" alt="Export terminal handling bulk commodities" style="width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) contrast(1.08) brightness(0.9);transition:filter 0.6s ease, transform 0.6s ease;" style-hover="filter:grayscale(0) contrast(1) brightness(1);transform:scale(1.03);" />
+      </div>
+      <div data-reveal style="grid-column:span 2;position:relative;overflow:hidden;height:440px;background:#070809;cursor:pointer;">
+        <img src="uploads/pasted-1783327177148-0.png" alt="Terraced open-cast operation" style="width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) contrast(1.08) brightness(0.9);transition:filter 0.6s ease, transform 0.6s ease;" style-hover="filter:grayscale(0) contrast(1) brightness(1);transform:scale(1.03);" />
+      </div>
+      <div data-reveal style="grid-column:span 3;position:relative;overflow:hidden;height:440px;background:#070809;cursor:pointer;">
+        <img src="assets/photo-trucks-aerial.png" alt="Side-tipper convoy moving product to siding" style="width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) contrast(1.08) brightness(0.9);transition:filter 0.6s ease, transform 0.6s ease;" style-hover="filter:grayscale(0) contrast(1) brightness(1);transform:scale(1.03);" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why" data-screen-label="Why AfriResources" style="background:#0C0D0F;padding:140px 64px;border-top:1px solid rgba(220,224,230,0.08);font-family:'Poppins',sans-serif;">
+  <div style="max-width:1460px;margin:0 auto;">
+    <div style="margin-bottom:56px;max-width:720px;" data-reveal>
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;">
+        <div style="width:24px;height:1px;background:#6A7178;"></div>
+        <span style="font-weight:500;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#6A7178;">06 / Why AfriResources</span>
+      </div>
+      <h2 style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:64px;line-height:0.96;text-transform:uppercase;color:#F4F6F8;margin:0;">Why counterparties work with us.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(220,224,230,0.10);border:1px solid rgba(220,224,230,0.10);" data-reveal>
+      <sc-for list="{{ why }}" as="w" hint-placeholder-count="6">
+        <div style="background:#0C0D0F;padding:40px 36px 46px;transition:background 0.4s ease;" style-hover="background:#070809;">
+          <div style="font-weight:500;font-size:10px;letter-spacing:0.28em;color:#4A5057;margin-bottom:24px;">{{ w.num }}</div>
+          <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:700;font-size:25px;letter-spacing:0.03em;text-transform:uppercase;color:#F4F6F8;margin-bottom:12px;">{{ w.title }}</div>
+          <p style="font-weight:300;font-size:13px;color:#9AA1A9;line-height:1.8;margin:0;">{{ w.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section id="team" data-screen-label="Leadership" style="background:#070809;padding:140px 64px;border-top:1px solid rgba(220,224,230,0.08);font-family:'Poppins',sans-serif;">
+  <div style="max-width:1460px;margin:0 auto;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;flex-wrap:wrap;gap:24px;" data-reveal>
+      <div>
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;">
+          <div style="width:24px;height:1px;background:#6A7178;"></div>
+          <span style="font-weight:500;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#6A7178;">07 / Leadership</span>
+        </div>
+        <h2 style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:64px;line-height:0.96;text-transform:uppercase;color:#F4F6F8;margin:0;">Owner-led,<br>hands-on.</h2>
+      </div>
+      <p style="font-weight:300;font-size:14px;color:#6A7178;line-height:1.9;max-width:360px;margin:0;">A lean executive team spanning trading, operations, finance and logistics across the Southern African mineral value chain.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;">
+      <sc-for list="{{ team }}" as="m" hint-placeholder-count="2">
+        <div data-reveal style="background:linear-gradient(165deg,#16181B 0%,#0C0D0F 82%);border:1px solid rgba(220,224,230,0.10);display:grid;grid-template-columns:240px 1fr;transition:border-color 0.4s ease, transform 0.4s ease;" style-hover="border-color:rgba(220,224,230,0.32);transform:translateY(-4px);">
+          <div style="position:relative;overflow:hidden;background:linear-gradient(135deg,#EEF0F3 0%,#ADB4BC 50%,#DEE2E7 100%);display:flex;align-items:center;justify-content:center;min-height:320px;">
+            <span style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:72px;letter-spacing:0.04em;color:rgba(10,11,12,0.32);">{{ m.initials }}</span>
+            <div style="position:absolute;top:0;bottom:0;right:0;width:1px;background:linear-gradient(180deg,transparent,rgba(214,218,224,0.5),transparent);"></div>
+          </div>
+          <div style="padding:34px 34px 36px;">
+            <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:700;font-size:26px;letter-spacing:0.02em;text-transform:uppercase;color:#F4F6F8;margin-bottom:6px;">{{ m.name }}</div>
+            <div style="font-weight:500;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#9AA1A9;margin-bottom:20px;">{{ m.role }}</div>
+            <sc-for list="{{ m.bio }}" as="para" hint-placeholder-count="3">
+              <p style="font-weight:300;font-size:13px;color:#9AA1A9;line-height:1.8;margin:0 0 12px;">{{ para }}</p>
+            </sc-for>
+            <a href="{{ m.linkedin }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:9px;margin-top:14px;font-weight:500;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#9AA1A9;text-decoration:none;border-bottom:1px solid rgba(220,224,230,0.22);padding-bottom:5px;transition:color 0.3s ease, border-color 0.3s ease;" style-hover="color:#FFFFFF;border-color:#F4F6F8;">LinkedIn</a>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTORS -->
+<section id="investors" data-screen-label="Investors" style="background:#0C0D0F;padding:140px 64px;border-top:1px solid rgba(220,224,230,0.08);font-family:'Poppins',sans-serif;">
+  <div style="max-width:1460px;margin:0 auto;display:grid;grid-template-columns:0.9fr 1.2fr;gap:100px;align-items:start;">
+    <div data-reveal>
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;">
+        <div style="width:24px;height:1px;background:#6A7178;"></div>
+        <span style="font-weight:500;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#6A7178;">08 / Investors &amp; Funding</span>
+      </div>
+      <h2 style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:62px;line-height:0.96;text-transform:uppercase;margin:0 0 28px;background:linear-gradient(172deg,#FBFCFD 6%,#C6CCD3 40%,#8B929A 62%,#D5DAE0 88%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">Capital that moves tonnage.</h2>
+      <p style="font-weight:300;font-size:15px;color:#9AA1A9;line-height:1.9;margin:0 0 34px;max-width:420px;">We work with financiers, trade finance providers and strategic partners to fund contracted volume. Governance documentation, KYC packs and commercial structures are available on request under NDA.</p>
+      <a href="mailto:trading@afri-resources.co.za" style="display:inline-block;padding:15px 34px;background:transparent;color:#D6DAE0;font-weight:600;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(220,224,230,0.25);transition:border-color 0.4s ease;" style-hover="border-color:#F4F6F8;color:#FFFFFF;">Request Information Pack</a>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(220,224,230,0.10);border:1px solid rgba(220,224,230,0.10);" data-reveal>
+      <sc-for list="{{ investors }}" as="i" hint-placeholder-count="5">
+        <div style="background:#0C0D0F;padding:36px 34px 40px;transition:background 0.4s ease;" style-hover="background:#070809;">
+          <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:700;font-size:24px;letter-spacing:0.03em;text-transform:uppercase;color:#F4F6F8;margin-bottom:12px;">{{ i.title }}</div>
+          <p style="font-weight:300;font-size:13px;color:#9AA1A9;line-height:1.8;margin:0;">{{ i.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section id="partners" data-screen-label="Value Chain" style="background:#070809;padding:140px 64px;border-top:1px solid rgba(220,224,230,0.08);font-family:'Poppins',sans-serif;">
+  <div style="max-width:1460px;margin:0 auto;">
+    <div style="margin-bottom:56px;max-width:760px;" data-reveal>
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;">
+        <div style="width:24px;height:1px;background:#6A7178;"></div>
+        <span style="font-weight:500;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#6A7178;">09 / Counterparties</span>
+      </div>
+      <h2 style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:64px;line-height:0.96;text-transform:uppercase;color:#F4F6F8;margin:0 0 24px;">Trusted across the value chain.</h2>
+      <p style="font-weight:300;font-size:15px;color:#9AA1A9;line-height:1.9;margin:0;max-width:520px;">We transact daily with counterparties at every stage of the chain — from the mine gate through to the vessel.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(220,224,230,0.10);border:1px solid rgba(220,224,230,0.10);" data-reveal>
+      <sc-for list="{{ partners }}" as="p" hint-placeholder-count="6">
+        <div style="background:#070809;padding:52px 34px;display:flex;flex-direction:column;gap:10px;transition:background 0.4s ease;" style-hover="background:#0C0D0F;">
+          <span style="font-family:'Big Shoulders Display',sans-serif;font-weight:700;font-size:24px;letter-spacing:0.03em;text-transform:uppercase;color:#F4F6F8;">{{ p.title }}</span>
+          <span style="font-weight:300;font-size:13px;color:#6A7178;line-height:1.7;">{{ p.body }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ESG -->
+<section id="esg" data-screen-label="ESG" style="background:#0C0D0F;padding:130px 64px;border-top:1px solid rgba(220,224,230,0.08);font-family:'Poppins',sans-serif;">
+  <div style="max-width:1460px;margin:0 auto;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:52px;flex-wrap:wrap;gap:24px;" data-reveal>
+      <div>
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;">
+          <div style="width:24px;height:1px;background:#6A7178;"></div>
+          <span style="font-weight:500;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#6A7178;">10 / Responsibility</span>
+        </div>
+        <h2 style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:56px;line-height:0.96;text-transform:uppercase;color:#F4F6F8;margin:0;">How we trade matters.</h2>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(220,224,230,0.10);border:1px solid rgba(220,224,230,0.10);" data-reveal>
+      <sc-for list="{{ esg }}" as="e" hint-placeholder-count="4">
+        <div style="background:#0C0D0F;padding:38px 32px 44px;">
+          <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:700;font-size:23px;letter-spacing:0.03em;text-transform:uppercase;color:#F4F6F8;margin-bottom:12px;">{{ e.title }}</div>
+          <p style="font-weight:300;font-size:13px;color:#9AA1A9;line-height:1.8;margin:0;">{{ e.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" data-screen-label="Contact" style="background:#070809;padding:140px 64px;border-top:1px solid rgba(220,224,230,0.08);font-family:'Poppins',sans-serif;">
+  <div style="max-width:1460px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center;">
+    <div data-reveal>
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:28px;">
+        <div style="width:24px;height:1px;background:#6A7178;"></div>
+        <span style="font-weight:500;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#6A7178;">11 / Contact</span>
+      </div>
+      <h2 style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:70px;line-height:0.94;text-transform:uppercase;margin:0 0 30px;color:#F4F6F8;">Looking for a trusted<br><span style="background:linear-gradient(172deg,#FBFCFD 6%,#C6CCD3 40%,#8B929A 62%,#D5DAE0 88%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">commodity trading partner?</span></h2>
+      <p style="font-weight:300;font-size:16px;color:#9AA1A9;line-height:1.9;margin:0 0 44px;max-width:500px;">Whether you're sourcing product, seeking logistics support or exploring strategic partnerships, our team is ready to help.</p>
+      <a href="mailto:trading@afri-resources.co.za" style="display:inline-block;padding:16px 38px;background:linear-gradient(135deg,#EEF0F3 0%,#ADB4BC 52%,#DEE2E7 100%);color:#0A0B0C;font-weight:600;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:box-shadow 0.4s ease;" style-hover="box-shadow:0 0 32px rgba(214,218,224,0.4);color:#0A0B0C;">Enquire Now</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;" data-reveal>
+      <div style="padding:34px 38px;background:linear-gradient(165deg,#16181B 0%,#0C0D0F 80%);border:1px solid rgba(220,224,230,0.10);">
+        <div style="font-weight:500;font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:#6A7178;margin-bottom:10px;">Trading Desk</div>
+        <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:600;font-size:24px;letter-spacing:0.02em;color:#F4F6F8;">trading@afri-resources.co.za</div>
+      </div>
+      <div style="padding:34px 38px;background:linear-gradient(165deg,#16181B 0%,#0C0D0F 80%);border:1px solid rgba(220,224,230,0.10);">
+        <div style="font-weight:500;font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:#6A7178;margin-bottom:10px;">Operations</div>
+        <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:600;font-size:24px;letter-spacing:0.02em;color:#F4F6F8;">ops@afri-resources.co.za</div>
+      </div>
+      <div style="padding:34px 38px;background:linear-gradient(165deg,#16181B 0%,#0C0D0F 80%);border:1px solid rgba(220,224,230,0.10);">
+        <div style="font-weight:500;font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:#6A7178;margin-bottom:10px;">Office</div>
+        <div style="font-weight:300;font-size:16px;color:#D6DAE0;line-height:1.6;">Mpumalanga · Johannesburg · South Africa</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#070809;padding:100px 64px 60px;border-top:1px solid rgba(220,224,230,0.10);font-family:'Poppins',sans-serif;">
+  <div style="max-width:1460px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:64px;padding-bottom:70px;">
+    <div>
+      <img src="uploads/pasted-1783962574079-0.png" alt="Afri-Resources" style="height:64px;filter:grayscale(1) brightness(1.6) contrast(1);transition:filter 0.6s ease;margin-bottom:28px;cursor:pointer;" style-hover="filter:grayscale(0) brightness(1) contrast(1);" />
+      <div style="font-weight:300;font-size:14px;color:#9AA1A9;line-height:1.9;max-width:320px;">Integrated commodity trading, mining services and logistics across Southern Africa.</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div style="font-weight:500;font-size:10px;letter-spacing:0.24em;text-transform:uppercase;color:#4A5057;margin-bottom:6px;">Company</div>
+      <a href="#about" style="font-weight:300;font-size:13px;color:#9AA1A9;text-decoration:none;transition:color 0.3s;" style-hover="color:#F4F6F8;">About</a>
+      <a href="#model" style="font-weight:300;font-size:13px;color:#9AA1A9;text-decoration:none;transition:color 0.3s;" style-hover="color:#F4F6F8;">Business Model</a>
+      <a href="#team" style="font-weight:300;font-size:13px;color:#9AA1A9;text-decoration:none;transition:color 0.3s;" style-hover="color:#F4F6F8;">Leadership</a>
+      <a href="#esg" style="font-weight:300;font-size:13px;color:#9AA1A9;text-decoration:none;transition:color 0.3s;" style-hover="color:#F4F6F8;">Responsibility</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div style="font-weight:500;font-size:10px;letter-spacing:0.24em;text-transform:uppercase;color:#4A5057;margin-bottom:6px;">Services</div>
+      <a href="#capabilities" style="font-weight:300;font-size:13px;color:#9AA1A9;text-decoration:none;transition:color 0.3s;" style-hover="color:#F4F6F8;">Strategic Sourcing</a>
+      <a href="#capabilities" style="font-weight:300;font-size:13px;color:#9AA1A9;text-decoration:none;transition:color 0.3s;" style-hover="color:#F4F6F8;">Processing &amp; Quality</a>
+      <a href="#capabilities" style="font-weight:300;font-size:13px;color:#9AA1A9;text-decoration:none;transition:color 0.3s;" style-hover="color:#F4F6F8;">Logistics</a>
+      <a href="#products" style="font-weight:300;font-size:13px;color:#9AA1A9;text-decoration:none;transition:color 0.3s;" style-hover="color:#F4F6F8;">Product Book</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div style="font-weight:500;font-size:10px;letter-spacing:0.24em;text-transform:uppercase;color:#4A5057;margin-bottom:6px;">Connect</div>
+      <a href="#investors" style="font-weight:300;font-size:13px;color:#9AA1A9;text-decoration:none;transition:color 0.3s;" style-hover="color:#F4F6F8;">Investors</a>
+      <a href="#contact" style="font-weight:300;font-size:13px;color:#9AA1A9;text-decoration:none;transition:color 0.3s;" style-hover="color:#F4F6F8;">Contact</a>
+      <a href="https://www.linkedin.com" target="_blank" rel="noopener" style="font-weight:300;font-size:13px;color:#9AA1A9;text-decoration:none;transition:color 0.3s;" style-hover="color:#F4F6F8;">LinkedIn</a>
+      <a href="mailto:trading@afri-resources.co.za" style="font-weight:300;font-size:13px;color:#9AA1A9;text-decoration:none;transition:color 0.3s;" style-hover="color:#F4F6F8;">trading@afri-resources.co.za</a>
+    </div>
+  </div>
+  <div style="max-width:1460px;margin:0 auto;padding-top:34px;border-top:1px solid rgba(220,224,230,0.10);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;">
+    <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.3em;text-transform:uppercase;color:#6A7178;">Building Africa, Block by Block</div>
+    <div style="display:flex;gap:28px;flex-wrap:wrap;align-items:center;">
+      <a href="#" style="font-weight:400;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#4A5057;text-decoration:none;transition:color 0.3s;" style-hover="color:#9AA1A9;">Privacy</a>
+      <a href="#" style="font-weight:400;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#4A5057;text-decoration:none;transition:color 0.3s;" style-hover="color:#9AA1A9;">Terms</a>
+      <span style="font-weight:400;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#4A5057;">© 2026 AfriResources</span>
+    </div>
+  </div>
+</footer>
+
+<template id="__bundler_thumbnail">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+    <defs>
+      <linearGradient id="tg" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="6%" stop-color="#FBFCFD"/>
+        <stop offset="40%" stop-color="#C6CCD3"/>
+        <stop offset="62%" stop-color="#8B929A"/>
+        <stop offset="88%" stop-color="#D5DAE0"/>
+      </linearGradient>
+    </defs>
+    <rect width="512" height="512" fill="#070809"/>
+    <text x="256" y="256" font-family="sans-serif" font-weight="800" font-size="170" letter-spacing="6" text-anchor="middle" fill="url(#tg)">AR</text>
+    <text x="256" y="322" font-family="sans-serif" font-weight="500" font-size="22" letter-spacing="7" text-anchor="middle" fill="#6A7178">AFRI-RESOURCES</text>
+  </svg>
+</template>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;revealMotion&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Motion&quot;}, &quot;revealDistance&quot;: {&quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 28, &quot;min&quot;: 0, &quot;max&quot;: 80, &quot;step&quot;: 4, &quot;unit&quot;: &quot;px&quot;, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Motion&quot;}}">
+class Component extends DCLogic {
+  reveal(el) {
+    el.style.opacity = '1';
+    el.style.transform = 'translateY(0)';
+  }
+  componentDidMount() {
+    const els = Array.from(document.querySelectorAll('[data-reveal]'));
+    if ((this.props.revealMotion ?? true) === false) {
+      els.forEach((el) => this.reveal(el));
+      return;
+    }
+    const dist = this.props.revealDistance ?? 28;
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        setTimeout(() => this.reveal(el), (el._revealIdx || 0) * 90);
+        io.unobserve(el);
+      });
+    }, { threshold: 0.05 });
+    let idx = 0, lastTop = -1;
+    els.forEach((el) => {
+      el.style.transition = 'opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1)';
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight * 0.95) { this.reveal(el); return; }
+      const top = Math.round(r.top);
+      idx = (top === lastTop) ? idx + 1 : 0;
+      lastTop = top;
+      el._revealIdx = idx;
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(' + dist + 'px)';
+      io.observe(el);
+    });
+    this._io = io;
+    this._failsafe = setTimeout(() => {
+      els.forEach((el) => {
+        if (el.style.opacity !== '0') return;
+        const r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight && r.bottom > 0) this.reveal(el);
+      });
+    }, 2000);
+  }
+  componentWillUnmount() {
+    if (this._io) this._io.disconnect();
+    if (this._failsafe) clearTimeout(this._failsafe);
+    document.querySelectorAll('[data-reveal]').forEach((el) => this.reveal(el));
+  }
+  renderVals() {
+    return {
+      stats: [
+        { value: '16,800+', label: 'Tons Delivered' },
+        { value: 'Multiple', label: 'Mining Partners' },
+        { value: 'Dual', label: 'Domestic & Export Markets' },
+        { value: 'End-to-End', label: 'Supply Chain' },
+      ],
+      aboutFacts: [
+        { label: 'Ownership', value: '100% Black-Owned' },
+        { label: 'Footprint', value: 'Mpumalanga · Johannesburg' },
+        { label: 'Commodities', value: 'Coal · Chrome · Manganese' },
+        { label: 'Markets', value: 'Domestic & Export' },
+      ],
+      model: [
+        { num: '01', title: 'Mine', body: 'Direct offtake from established South African mining operations under long-term commercial agreements.' },
+        { num: '02', title: 'Quality', body: 'Sampling, beneficiation and blending to meet the agreed customer or export specification.' },
+        { num: '03', title: 'Trading', body: 'Commercial structuring of the supply agreement, pricing, terms and counterparty risk.' },
+        { num: '04', title: 'Logistics', body: 'Road, rail and export coordination through vetted transport and terminal partners.' },
+        { num: '05', title: 'Customer', body: 'Delivered tonnage, reconciled documentation and a single point of commercial accountability.' },
+      ],
+      capabilities: [
+        { num: '01', title: 'Strategic Sourcing', body: 'Direct procurement from leading South African mining operations through long-term commercial relationships.' },
+        { num: '02', title: 'Processing & Quality', body: 'Coal beneficiation and blending solutions designed to meet customer specifications and export quality requirements.' },
+        { num: '03', title: 'Logistics', body: 'Integrated road, rail and export coordination supported by documented operational procedures and quality assurance.' },
+        { num: '04', title: 'Commodity Trading', body: 'Commercial management of domestic and export supply agreements with industrial customers and international trading partners.' },
+      ],
+      coal: [
+        { num: '01', name: 'RB2', specs: [
+          { label: 'Domestic Supply', value: 'Available on contract' },
+          { label: 'Export Supply', value: 'Richards Bay channel' },
+          { label: 'Typical Applications', value: 'Power generation, industrial boilers' },
+          { label: 'Availability', value: 'Confirmed per agreement' },
+        ] },
+        { num: '02', name: 'RB3', specs: [
+          { label: 'Domestic Supply', value: 'Available on contract' },
+          { label: 'Export Supply', value: 'Richards Bay channel' },
+          { label: 'Typical Applications', value: 'Utility and industrial blending' },
+          { label: 'Availability', value: 'Confirmed per agreement' },
+        ] },
+        { num: '03', name: '4800 kcal', specs: [
+          { label: 'Domestic Supply', value: 'Available on contract' },
+          { label: 'Export Supply', value: 'Regional and seaborne' },
+          { label: 'Typical Applications', value: 'Cement, industrial thermal use' },
+          { label: 'Availability', value: 'Confirmed per agreement' },
+        ] },
+        { num: '04', name: 'A-Grade Peas', specs: [
+          { label: 'Domestic Supply', value: 'Sized product, bulk or bagged' },
+          { label: 'Export Supply', value: 'By arrangement' },
+          { label: 'Typical Applications', value: 'Industrial heating, agriculture' },
+          { label: 'Availability', value: 'Confirmed per agreement' },
+        ] },
+      ],
+      minerals: [
+        { name: 'Chrome', specs: [
+          { label: 'Grades', value: 'Metallurgical & chemical' },
+          { label: 'Markets', value: 'Domestic & export' },
+        ] },
+        { name: 'Manganese', specs: [
+          { label: 'Content', value: 'From 32%+ Mn' },
+          { label: 'Markets', value: 'Domestic & export' },
+        ] },
+      ],
+      opsRows: [
+        { label: 'Quality Assurance', value: 'Independent verification against contract specification' },
+        { label: 'Sampling Protocols', value: 'Documented, applied load by load' },
+        { label: 'Commercial Reconciliation', value: 'Weekly against PO, tonnage and specification' },
+        { label: 'Supply Chain Visibility', value: 'Tracked from mine gate to delivery point' },
+        { label: 'Documentation', value: 'Full evidentiary pack per consignment' },
+      ],
+      why: [
+        { num: '01', title: 'Commercial Expertise', body: 'Structuring and negotiating supply agreements across domestic and export markets.' },
+        { num: '02', title: 'Integrated Logistics', body: 'Road, rail and terminal coordination managed as one chain, not handed between vendors.' },
+        { num: '03', title: 'Reliable Supply', body: 'Multiple offtake relationships mean volume commitments are met, not renegotiated.' },
+        { num: '04', title: 'Strategic Partnerships', body: 'Long-standing relationships with producers, transporters and processing facilities.' },
+        { num: '05', title: 'Operational Excellence', body: 'Documented protocols, sampling discipline and reconciliation on every consignment.' },
+        { num: '06', title: 'Market Knowledge', body: 'Live read on pricing, channel capacity and demand across the region.' },
+      ],
+      team: [
+        { initials: 'BM', name: 'Bongani Mthethwa', role: 'Chief Executive Officer', linkedin: 'https://www.linkedin.com', bio: [
+          "Bongani Mthethwa is the Founder and Chief Executive Officer of AfriResources, providing the strategic vision and leadership behind the company's growth into an integrated mining, commodity trading, and logistics business.",
+          'With extensive experience across coal procurement, commodity trading, project development, and commercial negotiations, Bongani has built a strong network of mining partners, logistics providers, financiers, and industrial customers throughout Southern Africa. He leads the company\u2019s growth strategy, strategic partnerships, capital raising initiatives, and expansion into both domestic and international markets.',
+          'His leadership is centred on delivering innovative, reliable, and sustainable commodity solutions while positioning AfriResources as a trusted partner in Africa\u2019s mining and energy sectors.',
+        ] },
+        { initials: 'TD', name: 'Thulani K. Dhlamini', role: 'Chief Operating Officer', linkedin: 'https://www.linkedin.com', bio: [
+          'Thulani K. Dhlamini is the Chief Operating Officer of AfriResources, responsible for leading the company\u2019s operations, supply chain, logistics, and commercial execution across Southern Africa.',
+          'With over a decade of experience in finance, supply chain management, and cross-border logistics, Thulani has held leadership roles at Samsung SDS South Africa and Eaton Electric South Africa, where he successfully delivered operational improvement and financial governance initiatives. His expertise spans commodity trading, process optimisation, automation, and operational strategy.',
+          'At AfriResources, he is focused on building scalable operational systems, strengthening governance, and driving sustainable growth across the company\u2019s mining and commodity trading activities.',
+        ] },
+      ],
+      investors: [
+        { title: 'Trade Finance', body: 'Facility structures against contracted offtake and confirmed purchase orders.' },
+        { title: 'Working Capital', body: 'Funding the gap between mine payment terms and customer settlement.' },
+        { title: 'Strategic Investment', body: 'Equity participation in the growth of the trading and logistics platform.' },
+        { title: 'Joint Ventures', body: 'Co-invested structures with producers, processors and logistics operators.' },
+        { title: 'Offtake Partnerships', body: 'Long-term volume agreements with industrial and international buyers.' },
+      ],
+      partners: [
+        { title: 'Mining Companies', body: 'Producers supplying contracted volume at the mine gate.' },
+        { title: 'Industrial Customers', body: 'Domestic users taking sized and thermal product.' },
+        { title: 'Transport Partners', body: 'Road and rail operators moving bulk tonnage.' },
+        { title: 'Processing Facilities', body: 'Beneficiation and screening to specification.' },
+        { title: 'Commodity Traders', body: 'Regional and international trading houses.' },
+        { title: 'Export Partners', body: 'Terminal and seaborne channel access.' },
+      ],
+      esg: [
+        { title: 'Safety', body: 'We work only with partners who meet recognised mine and transport safety standards.' },
+        { title: 'Governance', body: 'Documented policies, KYC onboarding and clean commercial structures on every deal.' },
+        { title: 'Responsible Trading', body: 'Verified origin, honest specification and transparent reconciliation.' },
+        { title: 'Communities', body: 'Local employment and procurement wherever our operations touch the ground.' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

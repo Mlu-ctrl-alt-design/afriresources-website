@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;800;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+body { margin: 0; background: #1A1818; }
+.dv-turn { padding: 40px 44px 32px; border-bottom: 1px solid rgba(255,255,255,.05); scroll-margin-top: 16px; }
+.dv-thd { display:flex; align-items:baseline; gap:10px; margin:0 0 20px; }
+.dv-tid { font:600 10px ui-monospace,Menlo,monospace; padding:3px 7px; background:#FF5200; color:#fff; border-radius:3px; text-decoration:none; }
+.dv-tname { font:500 13px/1.2 'Barlow',sans-serif; color:#555; }
+.dv-opts { display:flex; flex-wrap:wrap; gap:32px; align-items:flex-start; }
+.dv-opt { flex:none; display:flex; flex-direction:column; gap:10px; scroll-margin-top:16px; }
+.dv-oid { font:600 10px ui-monospace,Menlo,monospace; padding:3px 7px; background:rgba(255,255,255,.06); color:#888; border-radius:4px; text-decoration:none; }
+.dv-olabel { font:400 11px/1.3 'Barlow',sans-serif; color:rgba(255,255,255,.25); }
+.dv-opt:target .dv-oid { background:#FF5200; color:#fff; }
+.dv-next { margin:22px 0 0; font:12px/1.5 'Barlow',sans-serif; color:rgba(255,255,255,.2); }
+.logo-card { border-radius:3px; overflow:hidden; display:flex; flex-direction:column; }
+</style>
+</helmet>
+
+<section class="dv-turn" id="t1">
+<div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">Logo directions — Afri-Resources</span></div>
+<div class="dv-opts">
+
+  <!-- 1a — Refined Africa mark + condensed wordmark -->
+  <div class="dv-opt" id="1a">
+    <div style="display:flex;align-items:baseline;gap:8px;">
+      <a class="dv-oid" href="#1a">1a</a>
+      <span class="dv-olabel">Africa mark · refined mineral fill</span>
+    </div>
+    <div class="logo-card" style="width:420px;">
+      <!-- Dark version -->
+      <div style="background:#0A0A0A;padding:44px 48px;display:flex;flex-direction:column;gap:40px;">
+        <!-- Primary lockup -->
+        <svg viewBox="0 0 220 52" width="220" xmlns="http://www.w3.org/2000/svg">
+          <!-- Africa silhouette -->
+          <g transform="translate(0,1)">
+            <path d="M14,1 L30,1 L38,7 L40,17 L38,23 L44,27 L40,31 L37,44 L28,49 L20,50 L12,46 L6,35 L4,25 L8,17 L4,8 L8,3 Z" fill="#FF5200" opacity="0.15"/>
+            <path d="M14,1 L30,1 L38,7 L40,17 L38,23 L44,27 L40,31 L37,44 L28,49 L20,50 L12,46 L6,35 L4,25 L8,17 L4,8 L8,3 Z" fill="none" stroke="#FF5200" stroke-width="1.2"/>
+            <!-- diagonal hatching as mineral texture -->
+            <clipPath id="africa1a">
+              <path d="M14,1 L30,1 L38,7 L40,17 L38,23 L44,27 L40,31 L37,44 L28,49 L20,50 L12,46 L6,35 L4,25 L8,17 L4,8 L8,3 Z"/>
+            </clipPath>
+            <g clip-path="url(#africa1a)" opacity="0.3">
+              <line x1="-2" y1="6" x2="50" y2="6" stroke="#FF5200" stroke-width="0.5"/>
+              <line x1="-2" y1="14" x2="50" y2="14" stroke="#FF5200" stroke-width="0.5"/>
+              <line x1="-2" y1="22" x2="50" y2="22" stroke="#FF5200" stroke-width="0.5"/>
+              <line x1="-2" y1="30" x2="50" y2="30" stroke="#FF5200" stroke-width="0.5"/>
+              <line x1="-2" y1="38" x2="50" y2="38" stroke="#FF5200" stroke-width="0.5"/>
+              <line x1="-2" y1="46" x2="50" y2="46" stroke="#FF5200" stroke-width="0.5"/>
+            </g>
+          </g>
+          <!-- Wordmark -->
+          <text x="56" y="28" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="30" fill="#F5F3EF" letter-spacing="1">AFRI</text>
+          <text x="56" y="44" font-family="Barlow Condensed,sans-serif" font-weight="400" font-size="13" fill="#FF5200" letter-spacing="5">RESOURCES</text>
+        </svg>
+        <!-- Secondary: just the mark -->
+        <div style="display:flex;gap:24px;align-items:center;padding-top:16px;border-top:1px solid #161616;">
+          <svg viewBox="0 0 48 52" width="36" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14,1 L30,1 L38,7 L40,17 L38,23 L44,27 L40,31 L37,44 L28,49 L20,50 L12,46 L6,35 L4,25 L8,17 L4,8 L8,3 Z" fill="#FF5200" opacity="0.15"/>
+            <path d="M14,1 L30,1 L38,7 L40,17 L38,23 L44,27 L40,31 L37,44 L28,49 L20,50 L12,46 L6,35 L4,25 L8,17 L4,8 L8,3 Z" fill="none" stroke="#FF5200" stroke-width="1.5"/>
+          </svg>
+          <svg viewBox="0 0 48 52" width="24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14,1 L30,1 L38,7 L40,17 L38,23 L44,27 L40,31 L37,44 L28,49 L20,50 L12,46 L6,35 L4,25 L8,17 L4,8 L8,3 Z" fill="#FF5200" opacity="0.15"/>
+            <path d="M14,1 L30,1 L38,7 L40,17 L38,23 L44,27 L40,31 L37,44 L28,49 L20,50 L12,46 L6,35 L4,25 L8,17 L4,8 L8,3 Z" fill="none" stroke="#FF5200" stroke-width="1.5"/>
+          </svg>
+          <span style="font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:0.22em;color:#2A2A2A;text-transform:uppercase;">Mark · Stamp · Monochrome</span>
+        </div>
+      </div>
+      <!-- Light version -->
+      <div style="background:#F5F3EF;padding:32px 48px;">
+        <svg viewBox="0 0 220 52" width="200" xmlns="http://www.w3.org/2000/svg">
+          <g transform="translate(0,1)">
+            <path d="M14,1 L30,1 L38,7 L40,17 L38,23 L44,27 L40,31 L37,44 L28,49 L20,50 L12,46 L6,35 L4,25 L8,17 L4,8 L8,3 Z" fill="#FF5200" opacity="0.12"/>
+            <path d="M14,1 L30,1 L38,7 L40,17 L38,23 L44,27 L40,31 L37,44 L28,49 L20,50 L12,46 L6,35 L4,25 L8,17 L4,8 L8,3 Z" fill="none" stroke="#0A0A0A" stroke-width="1.2"/>
+          </g>
+          <text x="56" y="28" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="30" fill="#0A0A0A" letter-spacing="1">AFRI</text>
+          <text x="56" y="44" font-family="Barlow Condensed,sans-serif" font-weight="400" font-size="13" fill="#FF5200" letter-spacing="5">RESOURCES</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1b — Bold wordmark, no mark, tightly tracked -->
+  <div class="dv-opt" id="1b">
+    <div style="display:flex;align-items:baseline;gap:8px;">
+      <a class="dv-oid" href="#1b">1b</a>
+      <span class="dv-olabel">Pure wordmark · editorial weight</span>
+    </div>
+    <div class="logo-card" style="width:420px;">
+      <div style="background:#0A0A0A;padding:44px 48px;display:flex;flex-direction:column;gap:40px;">
+        <!-- Primary -->
+        <svg viewBox="0 0 280 52" width="280" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="36" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="40" fill="#F5F3EF" letter-spacing="2">AFRI</text>
+          <text x="132" y="36" font-family="Barlow Condensed,sans-serif" font-weight="300" font-size="40" fill="#FF5200" letter-spacing="2">RESOURCES</text>
+          <!-- orange rule under full width -->
+          <line x1="0" y1="46" x2="278" y2="46" stroke="#FF5200" stroke-width="1.5" opacity="0.3"/>
+          <line x1="0" y1="50" x2="278" y2="50" stroke="#FF5200" stroke-width="0.5" opacity="0.15"/>
+        </svg>
+        <!-- Submark variant: stacked -->
+        <div style="padding-top:16px;border-top:1px solid #161616;">
+          <svg viewBox="0 0 200 58" width="180" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="32" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="36" fill="#F5F3EF" letter-spacing="3">AFRI</text>
+            <line x1="0" y1="38" x2="88" y2="38" stroke="#FF5200" stroke-width="1.5"/>
+            <text x="0" y="54" font-family="Barlow Condensed,sans-serif" font-weight="300" font-size="14" fill="#FF5200" letter-spacing="7">RESOURCES</text>
+          </svg>
+        </div>
+      </div>
+      <div style="background:#F5F3EF;padding:32px 48px;">
+        <svg viewBox="0 0 280 52" width="240" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="36" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="40" fill="#0A0A0A" letter-spacing="2">AFRI</text>
+          <text x="132" y="36" font-family="Barlow Condensed,sans-serif" font-weight="300" font-size="40" fill="#FF5200" letter-spacing="2">RESOURCES</text>
+          <line x1="0" y1="46" x2="278" y2="46" stroke="#FF5200" stroke-width="1.5" opacity="0.3"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1c — Mineral diamond mark -->
+  <div class="dv-opt" id="1c">
+    <div style="display:flex;align-items:baseline;gap:8px;">
+      <a class="dv-oid" href="#1c">1c</a>
+      <span class="dv-olabel">Mineral crystal mark · geometric</span>
+    </div>
+    <div class="logo-card" style="width:420px;">
+      <div style="background:#0A0A0A;padding:44px 48px;display:flex;flex-direction:column;gap:40px;">
+        <!-- Primary -->
+        <svg viewBox="0 0 260 56" width="260" xmlns="http://www.w3.org/2000/svg">
+          <!-- Crystal/diamond mark: two triangles forming a gem -->
+          <g transform="translate(0,3)">
+            <!-- top half of gem -->
+            <polygon points="24,0 44,18 4,18" fill="#FF5200" opacity="0.9"/>
+            <!-- bottom half of gem (inverted, darker) -->
+            <polygon points="4,20 44,20 24,50" fill="#CC4000" opacity="0.9"/>
+            <!-- facet line -->
+            <line x1="4" y1="18" x2="44" y2="18" stroke="#0A0A0A" stroke-width="1"/>
+            <!-- inner facet highlights -->
+            <line x1="24" y1="0" x2="14" y2="18" stroke="#FF7733" stroke-width="0.8" opacity="0.4"/>
+            <line x1="24" y1="0" x2="34" y2="18" stroke="#FF7733" stroke-width="0.8" opacity="0.4"/>
+          </g>
+          <text x="60" y="28" font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="28" fill="#F5F3EF" letter-spacing="1.5">AFRI</text>
+          <text x="60" y="46" font-family="Barlow Condensed,sans-serif" font-weight="400" font-size="13" fill="#888888" letter-spacing="4.5">RESOURCES</text>
+        </svg>
+        <div style="padding-top:16px;border-top:1px solid #161616;display:flex;gap:20px;align-items:center;">
+          <!-- Mark sizes -->
+          <svg viewBox="0 0 48 56" width="32" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="24,3 44,21 4,21" fill="#FF5200"/>
+            <polygon points="4,23 44,23 24,53" fill="#CC4000"/>
+            <line
+</x-dc>
+</body>
+</html>
