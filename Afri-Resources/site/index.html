@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Afri-Resources — Bulk Commodity & Minerals Trading</title>
 <meta name="description" content="Afri-Resources sources, consolidates and delivers South African coal, chrome and manganese to mining majors, utilities and global commodity partners.">
+<meta name="theme-color" content="#070809">
+<link rel="icon" href="img/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="img/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Afri-Resources">
+<meta property="og:title" content="Afri-Resources — Bulk Commodity &amp; Minerals Trading">
+<meta property="og:description" content="Afri-Resources sources, consolidates and delivers South African coal, chrome and manganese to mining majors, utilities and global commodity partners.">
+<meta property="og:image" content="img/cranes.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -47,8 +56,13 @@ a { color:#D6DAE0; }
 .reveal { opacity:0; transform:translateY(28px); transition:opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1); }
 .reveal.in { opacity:1; transform:translateY(0); }
 
+/* grid children must be allowed to shrink below their min-content width,
+   otherwise 1fr tracks blow out the container on narrow screens */
+.cmd, .tc { min-width:0; }
+
 @media (max-width:1024px) {
   nav { padding:0 32px !important; }
+  nav > div { gap:20px !important; }
   section, footer { padding-left:40px !important; padding-right:40px !important; padding-top:100px !important; padding-bottom:100px !important; }
   #home h1 { font-size:88px !important; }
   section h2 { font-size:52px !important; }
@@ -59,9 +73,11 @@ a { color:#D6DAE0; }
   #operations > div > div:first-child { height:420px !important; }
   section:not([id]) h2 { font-size:60px !important; }
 }
+@media (max-width:900px) {
+  nav > div { display:none !important; }
+}
 @media (max-width:720px) {
   nav { padding:0 20px !important; height:64px !important; }
-  nav > div { display:none !important; }
   nav img { height:28px !important; }
   section, footer { padding-top:80px !important; padding-bottom:80px !important; padding-left:22px !important; padding-right:22px !important; }
   #home { padding:0 !important; min-height:auto !important; }
@@ -79,7 +95,8 @@ a { color:#D6DAE0; }
   #operations > div > div:first-child { height:300px !important; }
   #partners > div > div:nth-child(2) { grid-template-columns:1fr 1fr !important; }
   #partners > div > div:nth-child(2) > div { padding:32px 12px !important; }
-  #team > div > div:nth-child(2) { grid-template-columns:1fr 1fr !important; }
+  #team > div > div:nth-child(2) { grid-template-columns:1fr !important; }
+  .cmd { padding:36px 24px 40px !important; }
 }
 </style>
 </head>
@@ -308,7 +325,7 @@ a { color:#D6DAE0; }
       </div>
       <p style="font-weight:300;font-size:14px;color:#6A7178;line-height:1.9;max-width:360px;margin:0;">A lean, hands-on team spanning trading, operations and logistics across the South African mineral value chain.</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:900px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1180px;margin:0 auto;">
       <div class="tc reveal" style="background:linear-gradient(165deg,#16181B 0%,#0C0D0F 82%);border:1px solid rgba(220,224,230,0.10);">
         <div style="position:relative;aspect-ratio:4/5;overflow:hidden;background:linear-gradient(135deg,#EEF0F3 0%,#ADB4BC 50%,#DEE2E7 100%);display:flex;align-items:center;justify-content:center;">
           <span style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:68px;letter-spacing:0.04em;color:rgba(10,11,12,0.32);">BM</span>
@@ -333,6 +350,19 @@ a { color:#D6DAE0; }
           <p style="font-weight:300;font-size:13px;color:#9AA1A9;line-height:1.8;margin:0 0 12px;">Thulani K. Dhlamini is the Chief Operating Officer of AfriResources, responsible for leading the company&rsquo;s operations, supply chain, logistics, and commercial execution across Southern Africa.</p>
           <p style="font-weight:300;font-size:13px;color:#9AA1A9;line-height:1.8;margin:0 0 12px;">With over a decade of experience in finance, supply chain management, and cross-border logistics, Thulani has held leadership roles at Samsung SDS South Africa and Eaton Electric South Africa, where he successfully delivered operational improvement and financial governance initiatives. His expertise spans commodity trading, process optimisation, automation, and operational strategy.</p>
           <p style="font-weight:300;font-size:13px;color:#9AA1A9;line-height:1.8;margin:0 0 12px;">At AfriResources, he is focused on building scalable operational systems, strengthening governance, and driving sustainable growth across the company&rsquo;s mining and commodity trading activities.</p>
+        </div>
+      </div>
+      <div class="tc reveal" style="background:linear-gradient(165deg,#16181B 0%,#0C0D0F 82%);border:1px solid rgba(220,224,230,0.10);">
+        <div style="position:relative;aspect-ratio:4/5;overflow:hidden;background:linear-gradient(135deg,#EEF0F3 0%,#ADB4BC 50%,#DEE2E7 100%);display:flex;align-items:center;justify-content:center;">
+          <span style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:68px;letter-spacing:0.04em;color:rgba(10,11,12,0.32);">ZM</span>
+          <div style="position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(214,218,224,0.5),transparent);"></div>
+        </div>
+        <div style="padding:26px 28px 32px;">
+          <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:700;font-size:24px;letter-spacing:0.02em;text-transform:uppercase;color:#F4F6F8;margin-bottom:6px;">Zeegy Mafiri</div>
+          <div style="font-weight:500;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#9AA1A9;margin-bottom:18px;">Operations Manager</div>
+          <p style="font-weight:300;font-size:13px;color:#9AA1A9;line-height:1.8;margin:0 0 12px;">Zeegy Mafiri is the Operations Manager at AfriResources, responsible for the day-to-day running of the company&rsquo;s mining, trading and logistics operations across South Africa.</p>
+          <p style="font-weight:300;font-size:13px;color:#9AA1A9;line-height:1.8;margin:0 0 12px;">With five years in the role, Zeegy has built much of the operational backbone of the business &mdash; identifying bottlenecks, streamlining procedures and embedding best practice to maximise productivity on site. The remit spans departmental budgets, cost control and resource forecasting, alongside recruiting, training and mentoring operational teams against clearly defined performance indicators.</p>
+          <p style="font-weight:300;font-size:13px;color:#9AA1A9;line-height:1.8;margin:0 0 12px;">Acting as the bridge between frontline crews and senior management, Zeegy aligns daily activity with the company&rsquo;s wider commercial goals, and oversees procurement, inventory levels and distribution to keep the AfriResources supply chain cost-effective and on time.</p>
         </div>
       </div>
     </div>
