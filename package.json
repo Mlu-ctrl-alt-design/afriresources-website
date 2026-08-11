@@ -1,0 +1,10 @@
+{
+  "name": "afriresources-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Afri-Resources marketing site — static HTML, deployed on Vercel",
+  "scripts": {
+    "build": "rm -rf dist && mkdir -p dist && cp -R Afri-Resources/site/. dist/",
+    "dev": "npx --yes serve Afri-Resources/site"
+  }
+}
