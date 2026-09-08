@@ -4,8 +4,11 @@
   "private": true,
   "description": "Afri-Resources marketing site — static HTML, deployed on Vercel",
   "scripts": {
-    "build": "rm -rf dist && mkdir -p dist && cp -R Afri-Resources/site/. dist/ && node tools/build-single.js",
+    "build": "rm -rf dist && mkdir -p dist && cp -R Afri-Resources/site/. dist/ && cp afriresources-standalone.html dist/afriresources.html && node tools/check-standalone.js",
     "dev": "npx --yes serve Afri-Resources/site",
     "build:single": "node tools/build-single.js"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.4"
   }
 }
