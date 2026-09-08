@@ -4,7 +4,8 @@
   "private": true,
   "description": "Afri-Resources marketing site — static HTML, deployed on Vercel",
   "scripts": {
-    "build": "rm -rf dist && mkdir -p dist && cp -R Afri-Resources/site/. dist/",
-    "dev": "npx --yes serve Afri-Resources/site"
+    "build": "rm -rf dist && mkdir -p dist && cp -R Afri-Resources/site/. dist/ && node tools/build-single.js",
+    "dev": "npx --yes serve Afri-Resources/site",
+    "build:single": "node tools/build-single.js"
   }
 }
